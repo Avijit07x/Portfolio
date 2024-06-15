@@ -8,9 +8,9 @@ import Link from "next/link";
 const Hero = () => {
 	return (
 		<motion.div
-			initial={{ opacity: 0 }}
-			whileInView={{ opacity: 1 }}
-			transition={{ ease: "easeIn", duration: 3 }}
+			initial={{ opacity: 0, y: 80 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
 			className="flex lg:flex-row flex-col-reverse lg:justify-between items-center"
 		>
 			<div className="space-y-4 lg:w-1/2 text-center lg:text-left">
@@ -27,7 +27,9 @@ const Hero = () => {
 					more efficient.
 				</p>
 				<Link href="#contact">
-					<button className="btn border border-primary px-3 py-1 rounded-lg btn-wide font-medium mt-4">Contact Me</button>
+					<button className="btn border border-primary px-3 py-1 rounded-lg btn-wide font-medium mt-4">
+						Contact Me
+					</button>
 				</Link>
 			</div>
 			<div className="relative">

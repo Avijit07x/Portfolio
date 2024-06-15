@@ -11,7 +11,7 @@ const Navbar = () => {
 	return (
 		<motion.nav
 			initial={{ y: 50, opacity: 0 }}
-			whileInView={{ y: 0, opacity: 1 }}
+			whileInView={{ y: 0, opacity: 1 ,transition: { duration: 0.8 } }}
 			className="flex items-center justify-between backdrop-filter bg-opacity-20 backdrop-blur-sm lg:px-4 w-full fixed top-0"
 		>
 			<div>
