@@ -134,6 +134,18 @@ const tools = [
 		link: "https://yarnpkg.com/",
 		image: "/bun.png",
 	},
+	{
+		id: 47,
+		name: "Vercel",
+		link: "https://vercel.com/",
+		image: "/vercel.png",
+	},
+	{
+		id: 48,
+		name: "Vite",
+		link: "https://www.netlify.com/",
+		image: "/vite.png",
+	},
 
 	// Design Tools
 	{
