@@ -1,8 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import FragmentIcon from "./icons/FragmentIcon";
-import LaptopProgrammingIcon from "./icons/LaptopProgrammingIcon";
 import Link from "next/link";
 
 const Hero = () => {
@@ -11,7 +9,7 @@ const Hero = () => {
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
-			className="flex lg:flex-row flex-col-reverse lg:justify-between items-center"
+			className="w-full flex lg:flex-row flex-col-reverse lg:justify-between xl:gap-20 items-center h-full"
 		>
 			<div className="space-y-4 lg:w-1/2 text-center lg:text-left">
 				<h1 className="text-4xl lg:text-5xl font-medium">
@@ -32,9 +30,9 @@ const Hero = () => {
 					</button>
 				</Link>
 			</div>
-			<div className="relative">
+			<div className="relative lg:w-1/2 lg:flex justify-center items-center">
 				{/* web developer capsule */}
-				<span className="hidden lg:inline bg-white px-3 py-1 font-medium rounded-full shadow-md absolute top-3 left-3">
+				<span className="hidden xl:inline bg-white px-3 py-1 font-medium rounded-full shadow-md relative w-[10rem] -top-44 left-44 text-center">
 					Web Developer
 				</span>
 				{/* javascript icon */}
@@ -42,26 +40,22 @@ const Hero = () => {
 					initial={{ opacity: 0.5 }}
 					animate={{ opacity: [0, 1, 0] }}
 					transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-					className=" relative w-[1.8rem] h-[1.8rem] lg:top-48 lg:-left-5  top-10"
+					className="relative w-[1.8rem] h-[1.8rem] lg:top-[6rem] lg:left-20 top-10"
 				>
-					<Image className="" src="/js.png" alt="logo" fill quality={100} />
+					<Image src="/js.png" alt="logo" fill quality={100} />
 				</motion.div>
 				{/* react icon */}
-				<div className=" relative w-[1.8rem] h-[1.8rem] top-52 left-52 lg:top-44 lg:left-96 animate-spin-slow">
+				<div className="relative w-[1.8rem] h-[1.8rem] top-52 left-52 lg:-top-44 lg:left-[23rem] animate-spin-slow">
 					<Image className="" src="/react.png" alt="logo" fill quality={100} />
 				</div>
-				{/* laptop programming icon */}
-				<LaptopProgrammingIcon className=" hidden lg:inline absolute top-8 right-5" />
+				{/* next-js icon */}
+				<div className=" hidden lg:block relative w-[3rem] h-[1.8rem] top-32  left-80 animate-ping-slow">
+					<Image src="/next-js.png" alt="logo" fill quality={100} />
+				</div>
 				{/* face */}
-				<div className=" relative h-60 w-60  lg:h-[400px] lg:w-[400px] ">
+				<div className="relative h-60 w-60 lg:h-[400px] lg:w-[400px]">
 					<Image className="animate-float" src="/face.png" alt="logo" fill />
 				</div>
-				{/* Next js capsule */}
-				<span className="hidden lg:inline bg-white px-3 py-1 font-medium rounded-full shadow-md absolute bottom-7 right-2">
-					Next.Js
-				</span>
-				{/* fragment icon */}
-				<FragmentIcon className=" hidden lg:inline absolute bottom-7 left-8" />
 			</div>
 		</motion.div>
 	);
