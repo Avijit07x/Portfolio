@@ -4,15 +4,15 @@ import Image from "next/image";
 const MyExpertise = () => {
 	return (
 		<div id="tools" className="pt-16 lg:pt-48 w-full pb-48">
-			<div>
-				<h1 className="font-semibold text-sm text-center w-full uppercase">
+			<div className="space-y-4">
+				<h1 className="font-bold text-xs lg:text-sm text-center w-full uppercase">
 					<span className="text-primary">{"< "}</span>
 					My Knowledge Areas
 					<span className="text-primary">{" />"}</span>
 				</h1>
-				<h1 className="font-semibold text-4xl text-center w-full">
+				<h1 className="font-semibold text-2xl lg:text-4xl text-center w-full">
 					<span className="text-primary">{"< "}</span>
-					Languages & Tools
+					Languages &#38; Tools
 					<span className="text-primary">{" />"}</span>
 				</h1>
 				<p className="text-center text-sm mt-4">
@@ -21,7 +21,7 @@ const MyExpertise = () => {
 					the latest industry developments.
 				</p>
 			</div>
-			<div className="flex gap-4 flex-wrap justify-center items-center mt-20">
+			<div className="flex gap-4 flex-wrap justify-center items-center mt-10 lg:mt-16">
 				{tools?.map((tool) => {
 					return (
 						<div
