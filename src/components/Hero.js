@@ -13,7 +13,7 @@ const Hero = () => {
 		>
 			<div className="space-y-4 lg:w-1/2 text-center lg:text-left">
 				<h1 className="text-4xl lg:text-5xl font-medium">
-					Hello, <br /> I&#39;m
+					Hello, <br /> I&#39;m{" "}
 					<span className="text-primary">Avijit Dey.</span>
 				</h1>
 				<p>
@@ -21,9 +21,9 @@ const Hero = () => {
 					<span className="text-primary">{"/>"}</span>
 				</p>
 				<p className="text-sm lg:text-base">
-					As a frontend developer, I&#39;m passionate about creating more than just
-					code. My focus is on developing products that make life simpler and
-					more efficient.
+					As a frontend developer, I&#39;m passionate about creating more than
+					just code. My focus is on developing products that make life simpler
+					and more efficient.
 				</p>
 				<Link href="#contact">
 					<button className="btn border border-primary px-3 py-1 rounded-lg btn-wide font-medium mt-4">
