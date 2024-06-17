@@ -1,17 +1,15 @@
-import BottomMenuBar from "@/components/BottomMenuBar";
 import Hero from "@/components/Hero";
-import MyExpertise from "@/components/MyExpertise";
+import LanguagesTools from "@/components/LanguagesTools";
 import Navbar from "@/components/Navbar";
 
 const Page = () => {
 	return (
 		<>
 			<Navbar />
-			<main className="pt-16 lg:pt-36 px-4 lg:px-24 xl:px-36">
+			<main className="pt-10 lg:pt-36 px-4 lg:px-24 xl:px-36">
 				<Hero />
-				<MyExpertise />
+				<LanguagesTools />
 			</main>
-			<BottomMenuBar />
 		</>
 	);
 };
