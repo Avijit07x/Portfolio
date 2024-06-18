@@ -9,7 +9,7 @@ const Hero = () => {
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
-			className="w-full flex lg:flex-row flex-col-reverse lg:justify-between xl:gap-20 items-center xl:mt-10"
+			className="w-full flex lg:flex-row flex-col-reverse lg:justify-between  xl:gap-20 items-center"
 		>
 			<div className="space-y-4 lg:w-1/2 text-center lg:text-left">
 				<h1 className="text-4xl lg:text-5xl font-medium">
@@ -23,14 +23,32 @@ const Hero = () => {
 				<p className="text-sm lg:text-base">
 					I love turning complex problems into simple, beautiful, and intuitive
 					designs. My focus is on developing products that make life simpler and
-					more efficient. I enjoy collaborating with teams to transform complex
-					requirements into elegant, user-centric interfaces.
+					more efficient.
 				</p>
 				<Link href="#contact">
 					<button className="btn border border-primary px-3 py-1 rounded-lg btn-wide font-medium mt-4">
 						Contact Me
 					</button>
 				</Link>
+				<div className="grid place-items-center lg:place-content-start">
+					<motion.div
+						animate={{ opacity: 0, y: 10}}
+						transition={{
+							duration: 2,
+							ease: "easeInOut",
+							repeat: Infinity,
+							repeatType: "reverse",
+						}}
+					>
+						<Image
+							src="/mouse-cursor.png"
+							alt="scroll"
+							width={40}
+							height={40}
+							quality={100}
+						/>
+					</motion.div>
+				</div>
 			</div>
 			<div className="relative lg:w-1/2 lg:flex justify-end items-center">
 				{/* web developer capsule */}
