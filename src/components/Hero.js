@@ -9,7 +9,7 @@ const Hero = () => {
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
-			className="w-full flex lg:flex-row flex-col-reverse lg:justify-between xl:gap-20 items-center xl:mt-10"
+			className="w-full flex lg:flex-row flex-col-reverse lg:justify-between xl:gap-20 items-center lg:mt-10"
 		>
 			<div className="space-y-4 lg:w-1/2 text-center lg:text-left">
 				<h1 className="text-4xl lg:text-5xl font-medium">
