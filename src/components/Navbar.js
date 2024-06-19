@@ -13,14 +13,24 @@ const Navbar = () => {
 		<>
 			<motion.nav
 				initial={{ y: 50, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1, transition: { duration: 0.8 } }}
-				className="flex items-center justify-between backdrop-filter bg-opacity-20 backdrop-blur-sm lg:px-10 w-full fixed top-0 z-10"
+				whileInView={{
+					y: 0,
+					opacity: 1,
+					transition: { duration: 0.8 },
+				}}
+				className="fixed top-0 z-10 flex w-full items-center justify-between bg-opacity-20 backdrop-blur-sm backdrop-filter lg:px-10"
 			>
-				<div className=" relative w-14 h-14 lg:w-16 lg:h-16">
-					<Image src="/logo.png" alt="logo" fill quality={100} />
+				<div className="relative h-14 w-14 lg:h-16 lg:w-16">
+					<Image
+						src="/logo.png"
+						alt="logo"
+						fill
+						quality={100}
+						sizes="(100vw, 100vh)"
+					/>
 				</div>
-				<div className="hidden lg:block mr-5">
-					<ul className="flex gap-8 text-base  font-medium lg:font-semibold">
+				<div className="mr-5 hidden lg:block">
+					<ul className="flex gap-8 text-base font-medium lg:font-semibold">
 						<li>
 							<Link href="/">Linkedin</Link>
 						</li>
@@ -38,7 +48,7 @@ const Navbar = () => {
 				</div>
 				<MenuIcon
 					onClick={() => setIsOpen(!isOpen)}
-					className="lg:hidden mr-4"
+					className="mr-4 lg:hidden"
 				/>
 			</motion.nav>
 			<AnimatePresence>
@@ -47,10 +57,10 @@ const Navbar = () => {
 						initial={{ opacity: 0, x: 50 }}
 						animate={{ opacity: 1, x: 0 }}
 						exit={{ opacity: 0, x: 100 }}
-						className="lg:hidden w-3/5 p-5 fixed top-0 right-0 h-screen backdrop-filter bg-white/50 backdrop-blur-md z-20"
+						className="fixed right-0 top-0 z-20 h-screen w-3/5 bg-white/50 p-5 backdrop-blur-md backdrop-filter lg:hidden"
 					>
 						<CancelIcon onClick={() => setIsOpen(!isOpen)} />
-						<ul className="flex flex-col justify-center items-center gap-4 text-base font-semibold lg:font-semibold mt-10 text-primary">
+						<ul className="mt-10 flex flex-col items-center justify-center gap-4 text-base font-semibold text-primary lg:font-semibold">
 							<li>
 								<Link href="/">Linkedin</Link>
 							</li>

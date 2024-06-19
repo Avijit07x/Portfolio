@@ -6,7 +6,7 @@ const Page = () => {
 	return (
 		<>
 			<Navbar />
-			<main className="pt-10 lg:pt-36 px-4 lg:px-24 xl:px-36">
+			<main className="px-4 pt-8 lg:px-24 xl:px-36">
 				<Hero />
 				<LanguagesTools />
 			</main>
