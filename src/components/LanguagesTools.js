@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LanguagesTools = () => {
 	return (
-		<div id="tools" className="w-full pb-48 pt-10">
+		<div id="tools" className="w-full pb-48 pt-20">
 			<div className="space-y-4">
 				<h1 className="w-full text-center text-xs font-bold uppercase lg:text-sm">
 					<span className="text-primary">{"{ "}</span>
@@ -30,13 +30,7 @@ const LanguagesTools = () => {
 							className="grid h-20 w-20 cursor-pointer place-items-center rounded-md bg-white drop-shadow-md"
 							title={tool.name}
 						>
-							<Image
-								src={tool.image}
-								alt={tool.name}
-								width={40}
-								height={40}
-								
-							/>
+							<Image src={tool.image} alt={tool.name} width={40} height={40} />
 						</div>
 					);
 				})}
