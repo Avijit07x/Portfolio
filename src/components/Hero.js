@@ -2,37 +2,54 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+	const [userData, setUserData] = useState(null);
+	useEffect(() => {
+		const getData = async () => {
+			try {
+				const res = await fetch(
+					`${process.env.NEXT_PUBLIC_BASE_URL}api/user_data`,
+					{ cache: "default" },
+				);
+				const data = await res.json();
+				setUserData(data);
+			} catch (error) {
+				setIsLoading(false);
+				console.log({ error: error.message });
+				throw new Error({ error: error.message });
+			}
+		};
+		getData();
+	}, []);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
-			className="flex h-full w-full flex-col-reverse items-center justify-center lg:h-screen  lg:flex-row lg:justify-between"
+			className="flex h-full w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
 		>
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
 					Hello, <br /> I&#39;m{" "}
-					<span className="text-primary">Avijit Dey.</span>
+					<span className="text-primary">{userData?.[0].name}</span>
 				</h1>
 				<p className="font-semibold">
-					<span className="text-primary">{"{ "}</span>Front-End Web Developer
+					<span className="text-primary">{"{ "}</span>
+					{userData?.[0].profession}
 					<span className="text-primary">{" }"}</span>
 				</p>
-				<p className="text-sm lg:text-base">
-					I love turning complex problems into simple, beautiful, and intuitive
-					designs. My focus is on developing products that make life simpler and
-					more efficient.
-				</p>
+				<p className="text-sm lg:text-base">{userData?.[0].desc}</p>
 				<div className="space-x-4">
 					<Link href="#contact">
-						<button className="btn-wide mt-4 rounded-lg border border-primary px-3 py-1 font-medium">
+						<button className="mt-4 rounded-lg border border-primary px-3 py-1 transition-colors hover:bg-primary hover:text-white lg:font-medium">
 							Contact Me
 						</button>
 					</Link>
-					<Link href="https://drive.google.com/file/d/173OocuWwADpgIVO6FM07Cyjl3xeALMup/view?usp=sharing">
-						<button className="btn-wide mt-4 rounded-lg border border-primary px-3 py-1 font-medium">
+					<Link href={`${userData?.[0].resume}`}>
+						<button className="mt-4 rounded-lg border border-primary px-3 py-1 transition-colors hover:bg-primary hover:text-white lg:font-medium">
 							My Resume
 						</button>
 					</Link>
@@ -73,34 +90,15 @@ const Hero = () => {
 					}}
 					className="relative top-10 h-[1.8rem] w-[1.8rem] lg:left-20 lg:top-[6rem]"
 				>
-					<Image
-						src="/js.png"
-						alt="logo"
-						fill
-						quality={100}
-						sizes="(100vw, 100vh)"
-					/>
+					<Image src="/js.png" alt="logo" fill quality={100} />
 				</motion.div>
 				{/* react icon */}
 				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spin-slow lg:-top-44 lg:left-[25rem]">
-					<Image
-						className=""
-						src="/react.png"
-						alt="react logo"
-						fill
-						sizes="(100vw, 100vh)"
-						quality={100}
-					/>
+					<Image src="/react.png" alt="react logo" fill quality={100} />
 				</div>
 				{/* next-js icon */}
 				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
-					<Image
-						src="/next-js.png"
-						alt="next-js logo"
-						fill
-						quality={100}
-						sizes="(100vw, 100vh)"
-					/>
+					<Image src="/next-js.png" alt="next-js logo" fill quality={100} />
 				</div>
 				{/* face */}
 				<div className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]">
@@ -109,7 +107,6 @@ const Hero = () => {
 						src="/face.png"
 						alt="face logo"
 						fill
-						sizes="(100vw, 100vh)"
 					/>
 				</div>
 			</div>
