@@ -69,7 +69,6 @@ const Hero = () => {
 							alt="mouse cursor"
 							width={40}
 							height={40}
-							quality={100}
 						/>
 					</motion.div>
 				</div>
@@ -90,15 +89,15 @@ const Hero = () => {
 					}}
 					className="relative top-10 h-[1.8rem] w-[1.8rem] lg:left-20 lg:top-[6rem]"
 				>
-					<Image src="/js.png" alt="logo" fill quality={100} />
+					<Image src="/js.png" alt="logo" fill />
 				</motion.div>
 				{/* react icon */}
 				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spin-slow lg:-top-44 lg:left-[25rem]">
-					<Image src="/react.png" alt="react logo" fill quality={100} />
+					<Image src="/react.png" alt="react logo" fill />
 				</div>
 				{/* next-js icon */}
 				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
-					<Image src="/next-js.png" alt="next-js logo" fill quality={100} />
+					<Image src="/next-js.png" alt="next-js logo" fill />
 				</div>
 				{/* face */}
 				<div className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]">

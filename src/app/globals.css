@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 html {
-	scroll-behavior: smooth;
 	scrollbar-width: thin;
+	scroll-behavior: smooth;
 }
 body {
 	color: #242038;
