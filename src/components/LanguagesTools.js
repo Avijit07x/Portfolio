@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LanguagesTools = () => {
 	return (
-		<div id="tools" className="w-full py-20">
+		<div className="w-full my-20">
 			<div className="space-y-4">
 				<h1 className="w-full text-center text-xs font-bold uppercase lg:text-sm">
 					<span className="text-primary">{"{ "}</span>

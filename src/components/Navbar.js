@@ -12,12 +12,9 @@ const Navbar = () => {
 	return (
 		<>
 			<motion.nav
-				initial={{ y: 50, opacity: 0 }}
-				whileInView={{
-					y: 0,
-					opacity: 1,
-					transition: { duration: 0.8 },
-				}}
+				initial={{ opacity: 0, y: 80 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ ease: "easeInOut", duration: 0.7 }}
 				className="fixed top-0 z-10 flex w-full items-center justify-between bg-opacity-20 backdrop-blur-sm backdrop-filter lg:px-10"
 			>
 				<div className="relative h-14 w-14 lg:h-16 lg:w-16">
@@ -45,6 +42,7 @@ const Navbar = () => {
 					className="mr-4 lg:hidden"
 				/>
 			</motion.nav>
+			{/* Mobile Menu */}
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div

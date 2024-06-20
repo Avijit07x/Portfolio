@@ -8,7 +8,7 @@ const Page = () => {
 	return (
 		<>
 			<Navbar />
-			<main className="px-4 pt-8 lg:px-24 lg:pt-0 xl:px-36">
+			<main className="mt-8 px-4 lg:px-24 lg:pt-0 xl:px-36">
 				<Hero />
 				<Animation>
 					<LanguagesTools />

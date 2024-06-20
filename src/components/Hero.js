@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
 	const [userData, setUserData] = useState(null);
+
 	useEffect(() => {
 		const getData = async () => {
 			try {
@@ -16,9 +17,7 @@ const Hero = () => {
 				const data = await res.json();
 				setUserData(data);
 			} catch (error) {
-				setIsLoading(false);
 				console.log({ error: error.message });
-				throw new Error({ error: error.message });
 			}
 		};
 		getData();
@@ -28,7 +27,7 @@ const Hero = () => {
 		<motion.div
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ ease: [0.25, 0.1, 0.25, 1], duration: 1 }}
+			transition={{ ease: "easeInOut", duration: 0.7 }}
 			className="flex h-full w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
 		>
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
@@ -56,9 +55,9 @@ const Hero = () => {
 				</div>
 				<div className="grid place-items-center lg:place-content-start">
 					<motion.div
-						animate={{ opacity: 0, y: 10 }}
+						animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
 						transition={{
-							duration: 2,
+							duration: 3,
 							ease: "easeInOut",
 							repeat: Infinity,
 							repeatType: "reverse",
@@ -74,13 +73,10 @@ const Hero = () => {
 				</div>
 			</div>
 			<div className="relative items-center justify-end lg:flex">
-				{/* web developer capsule */}
 				<span className="relative -top-44 left-52 hidden w-[10rem] rounded-full bg-white px-3 py-1 text-center font-medium shadow-md xl:inline">
 					Web Developer
 				</span>
-				{/* javascript icon */}
 				<motion.div
-					initial={{ opacity: 0.5 }}
 					animate={{ opacity: [0, 1, 0] }}
 					transition={{
 						duration: 6,
@@ -91,23 +87,27 @@ const Hero = () => {
 				>
 					<Image src="/js.png" alt="logo" fill />
 				</motion.div>
-				{/* react icon */}
-				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spin-slow lg:-top-44 lg:left-[25rem]">
+				<motion.div
+					className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] lg:-top-44 lg:left-[25rem]"
+					animate={{ rotate: 360 }}
+					transition={{
+						duration: 10,
+						ease: "linear",
+						repeat: Infinity,
+					}}
+				>
 					<Image src="/react.png" alt="react logo" fill />
-				</div>
-				{/* next-js icon */}
+				</motion.div>
 				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
 					<Image src="/next-js.png" alt="next-js logo" fill />
 				</div>
-				{/* face */}
-				<div className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]">
-					<Image
-						className="animate-float"
-						src="/face.png"
-						alt="face logo"
-						fill
-					/>
-				</div>
+				<motion.div
+					animate={{ y: [0, -20, 0] }}
+					transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+					className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]"
+				>
+					<Image src="/face.png" alt="face logo" fill priority />
+				</motion.div>
 			</div>
 		</motion.div>
 	);
