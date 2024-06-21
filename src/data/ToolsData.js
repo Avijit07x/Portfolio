@@ -66,6 +66,18 @@ const tools = [
 	},
 	{
 		id: 24,
+		name: "Shadcn/ui",
+		link: "https://ui.shadcn.com/",
+		image: "/shadcn.avif",
+	},
+	{
+		id: 25,
+		name: "Mui",
+		link: "https://mui.com/",
+		image: "/mui.png",
+	},
+	{
+		id: 26,
 		name: "Express.js",
 		link: "https://expressjs.com/",
 		image: "/express.png",

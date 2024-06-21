@@ -43,12 +43,12 @@ const Hero = () => {
 				<p className="text-sm lg:text-base">{userData?.[0].desc}</p>
 				<div className="space-x-4">
 					<Link href="#contact">
-						<button className="mt-4 rounded-lg border border-primary px-3 py-1 transition-colors hover:bg-primary hover:text-white lg:font-medium">
+						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
 							Contact Me
 						</button>
 					</Link>
 					<Link href={`${userData?.[0].resume}`}>
-						<button className="mt-4 rounded-lg border border-primary px-3 py-1 transition-colors hover:bg-primary hover:text-white lg:font-medium">
+						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
 							My Resume
 						</button>
 					</Link>
@@ -106,7 +106,13 @@ const Hero = () => {
 					transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
 					className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]"
 				>
-					<Image src="/face.png" alt="face logo" fill priority />
+					<Image
+						className="object-contain"
+						src="/face.png"
+						alt="face logo"
+						fill
+						priority
+					/>
 				</motion.div>
 			</div>
 		</motion.div>

@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const LanguagesTools = () => {
 	return (
-		<div className="w-full my-20">
+		<div className="mt-20 w-full py-10">
 			<div className="space-y-4">
 				<h1 className="w-full text-center text-xs font-bold uppercase lg:text-sm">
 					<span className="text-primary">{"{ "}</span>
 					My Knowledge Areas
 					<span className="text-primary">{" }"}</span>
 				</h1>
-				<h1 className="w-full text-center text-2xl font-semibold lg:text-4xl">
+				<h1 className="w-full text-center text-2xl font-semibold lg:text-3xl">
 					<span className="text-primary">{"{ "}</span>
 					Languages &#38; Tools
 					<span className="text-primary">{" }"}</span>
