@@ -15,7 +15,7 @@ const ContactMe = () => {
 				Open for collaboration and freelance opportunities. LetI&#39;ms create
 				something amazing together.
 			</p>
-			<div className="mt-3 flex flex-col justify-center lg:mt-10 lg:flex-row lg:gap-20">
+			<div className="mt-3 flex flex-col justify-center lg:mt-10 lg:flex-row">
 				<form
 					action=""
 					className="mx-auto mt-8 flex w-full flex-col gap-4 lg:w-1/2"
@@ -34,11 +34,11 @@ const ContactMe = () => {
 						required
 					/>
 					<textarea
-						className="transition-color h-48 resize-none rounded-md border border-primary px-2 py-2 text-sm outline-none placeholder:text-sm focus:border-2"
+						className="transition-color h-32 resize-none rounded-md border border-primary px-2 py-2 text-sm outline-none placeholder:text-sm focus:border-2"
 						placeholder="Message"
 						required
 					></textarea>
-					<button className="mx-auto h-8 w-fit rounded-md border border-primary bg-primary px-2 text-white">
+					<button className="mx-auto w-fit rounded-md bg-primary px-5 py-1 text-white">
 						Submit
 					</button>
 				</form>
@@ -49,6 +49,7 @@ const ContactMe = () => {
 							className="rounded-md bg-white p-3 shadow-md lg:p-4"
 							href="mailto:deyavijit134@gmail.com"
 							target="_blank"
+							aria-label="email me"
 						>
 							<EmailIcon />
 						</Link>
@@ -56,6 +57,7 @@ const ContactMe = () => {
 							className="rounded-md bg-white p-3 shadow-md lg:p-4"
 							href="https://twitter.com/Avijit07x"
 							target="_blank"
+							aria-label="follow me on twitter"
 						>
 							<XIcon />
 						</Link>
@@ -63,6 +65,7 @@ const ContactMe = () => {
 							className="rounded-md bg-white p-3 shadow-md lg:p-4"
 							href="https://github.com/Avijit07x"
 							target="_blank"
+							aria-label="follow me on github"
 						>
 							<GithubIcon />
 						</Link>
@@ -70,6 +73,7 @@ const ContactMe = () => {
 							className="rounded-md bg-white p-3 shadow-md lg:p-4"
 							href="/"
 							target="_blank"
+							aria-label="follow me on linkedin"
 						>
 							<LinkedinIcon />
 						</Link>
