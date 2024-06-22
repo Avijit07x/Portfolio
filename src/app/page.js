@@ -11,7 +11,7 @@ const Page = () => {
 		<>
 			<Toaster position="bottom-right" richColors className="hidden lg:block" />
 			<Navbar />
-			<main className="mt-8 px-4 lg:px-24 lg:pt-0 xl:px-36">
+			<main className="px-4 lg:px-24 xl:px-36">
 				<Hero />
 				<LanguagesTools />
 				<MyWork />

@@ -18,7 +18,9 @@ const Navbar = () => {
 				className="fixed top-0 z-10 flex w-full items-center justify-between bg-white bg-opacity-20 backdrop-blur-sm backdrop-filter lg:px-10"
 			>
 				<div className="relative h-14 w-14 lg:h-16 lg:w-16">
-					<Image src="/logo.png" alt="logo" fill quality={100} />
+					<Link href="/">
+						<Image src="/logo.png" alt="logo" fill quality={100} />
+					</Link>
 				</div>
 				<div className="mr-5 hidden lg:block">
 					<ul className="flex gap-8 text-base font-medium lg:font-semibold">
