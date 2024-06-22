@@ -49,10 +49,10 @@ To run this project locally, follow these steps:
    Create a `.env.local` file in the root directory and add your environment variables:
 
    ```env
-   MONGODB_URI=your_mongodb_connection_string
-   EMAILJS_SERVICE_ID=your_emailjs_service_id
-   EMAILJS_TEMPLATE_ID=your_emailjs_template_id
-   EMAILJS_USER_ID=your_emailjs_user_id
+   NEXT_PUBLIC_BASE_URL = your_mongodb_connection_string
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID = your_emailjs_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = your_emailjs_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = your_emailjs_public_key
    ```
 
 4. **Run the development server**:
@@ -75,3 +75,16 @@ To run this project locally, follow these steps:
 The portfolio is deployed and can be accessed [here](https://avijit07x-portfolio.vercel.app/).
 
 ## Screenshot
+
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/7200c643-99d5-46cb-8ae0-978319613b7a)
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/938ef50d-2d6b-483a-bdce-0c4e55dca3c4)
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/274c454f-e4a6-4a2d-b3b5-a022e9546ebb)
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/5892a8b1-47d9-417f-b7df-d221673bb8db)
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/b4592dec-629d-4316-a863-c8633a42290b)
+![image](https://github.com/Avijit07x/portfolio/assets/154034057/3c240a7c-1e17-4a58-967f-35823c964719)
+
+
+
+
+
+
