@@ -23,7 +23,12 @@ const Navbar = () => {
 				<div className="mr-5 hidden lg:block">
 					<ul className="flex gap-8 text-base font-medium lg:font-semibold">
 						<li>
-							<Link href="/">Linkedin</Link>
+							<Link
+								href="https://www.linkedin.com/in/avijit07x/"
+								target="_blank"
+							>
+								Linkedin
+							</Link>
 						</li>
 						<li>
 							<Link href="https://github.com/Avijit07x" target="_blank">
@@ -54,7 +59,12 @@ const Navbar = () => {
 						<CancelIcon onClick={() => setIsOpen(!isOpen)} />
 						<ul className="mt-10 flex flex-col items-center justify-center gap-4 text-base font-semibold text-primary lg:font-semibold">
 							<li>
-								<Link href="/">Linkedin</Link>
+								<Link
+									href="https://www.linkedin.com/in/avijit07x/"
+									target="_blank"
+								>
+									Linkedin
+								</Link>
 							</li>
 							<li>
 								<Link href="https://github.com/Avijit07x" target="_blank">
