@@ -13,7 +13,7 @@ const ContactMe = () => {
 				<span className="text-primary">{" }"}</span>
 			</h1>
 			<p className="mt-4 text-center text-sm font-medium">
-				Open for collaboration and freelance opportunities. LetI&#39;ms create
+				Open for collaboration and freelance opportunities. Let&#39;s create
 				something amazing together.
 			</p>
 			<div className="mt-3 flex flex-col justify-center lg:mt-10 lg:flex-row">
