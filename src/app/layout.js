@@ -13,6 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<meta
+				name="google-site-verification"
+				content="GK-i-SrOMyVSmwQQuEQiEtKGzhiCA9f1AgZT-nB0TMw"
+			/>
 			<body className={`${inter.className} relative`}>
 				<div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
 				{children}
