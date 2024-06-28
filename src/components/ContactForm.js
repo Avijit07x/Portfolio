@@ -80,7 +80,7 @@ const ContactForm = () => {
 				required
 			></textarea>
 			<button
-				className="mx-auto w-fit rounded-md bg-primary px-5 py-1 text-white"
+				className="mx-auto w-fit rounded-md bg-primary px-5 py-2 text-white"
 				type="submit"
 				disabled={isSubmitting}
 			>
