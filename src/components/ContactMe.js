@@ -13,12 +13,12 @@ const ContactMe = () => {
 				<span className="text-primary">{" }"}</span>
 			</h1>
 			<p className="mt-4 text-center text-sm font-medium">
-				Open for collaboration and freelance opportunities. Let&#39;s create
-				something amazing together.
+				Have an idea that needs sparking? Let&#39;s connect and turn it into
+				something amazing!
 			</p>
-			<div className="mt-3 flex flex-col justify-center lg:mt-10 lg:flex-row">
+			<div className="mt-3 flex flex-col justify-center lg:mt-10">
 				<ContactForm />
-				<div className="mt-8 lg:w-1/2">
+				<div className="mx-auto mt-8 lg:w-1/2">
 					<h1 className="text-center font-medium">Or contact me through:</h1>
 					<div className="mt-3 flex items-center justify-center gap-4 lg:mt-10 lg:gap-10">
 						<Link

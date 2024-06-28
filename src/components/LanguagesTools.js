@@ -19,7 +19,9 @@ const LanguagesTools = () => {
 					I am skilled in various languages and tools and have a strong drive to
 					learn new technologies and stay updated with the latest industry
 					trends. <br />
-					Right now, I am focusing on learning backend development.
+					Currently, my focus is on deepening my expertise in backend
+					development, exploring new frameworks and technologies to enhance my
+					capabilities.
 				</p>
 			</div>
 			<div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:mt-16">

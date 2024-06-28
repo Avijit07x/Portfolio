@@ -39,7 +39,7 @@ const ContactForm = () => {
 		<form
 			ref={form}
 			onSubmit={sendEmail}
-			className="mx-auto mt-8 flex w-full flex-col gap-2 lg:w-1/2"
+			className="mx-auto mt-8 flex w-full flex-col gap-2 lg:w-3/5"
 		>
 			<label
 				htmlFor="user_name"

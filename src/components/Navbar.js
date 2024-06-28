@@ -59,22 +59,31 @@ const Navbar = () => {
 						className="fixed right-0 top-0 z-20 h-screen w-3/5 bg-white/50 p-5 backdrop-blur-md backdrop-filter lg:hidden"
 					>
 						<CancelIcon onClick={() => setIsOpen(!isOpen)} />
-						<ul className="mt-10 flex flex-col items-center justify-center gap-4 text-base font-semibold text-primary lg:font-semibold">
-							<li>
+						<ul className="mt-10 flex flex-col items-center justify-center gap-4 space-y-1 px-2 text-base font-medium text-primary lg:font-semibold">
+							<li className="w-full">
 								<Link
+									className="inline-block w-full rounded-full bg-primary px-3 py-2 text-center text-white shadow-md"
 									href="https://www.linkedin.com/in/avijit07x/"
 									target="_blank"
 								>
 									Linkedin
 								</Link>
 							</li>
-							<li>
-								<Link href="https://github.com/Avijit07x" target="_blank">
+							<li className="w-full">
+								<Link
+									className="inline-block w-full rounded-full bg-primary px-3 py-2 text-center text-white shadow-md"
+									href="https://github.com/Avijit07x"
+									target="_blank"
+								>
 									Github
 								</Link>
 							</li>
-							<li>
-								<Link href="https://twitter.com/Avijit07x" target="_blank">
+							<li className="w-full">
+								<Link
+									className="inline-block w-full rounded-full bg-primary px-3 py-2 text-center text-white shadow-md"
+									href="https://twitter.com/Avijit07x"
+									target="_blank"
+								>
 									Twitter
 								</Link>
 							</li>
