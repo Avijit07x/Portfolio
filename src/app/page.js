@@ -10,7 +10,9 @@ const Page = () => {
 	return (
 		<>
 			<Toaster position="bottom-right" richColors className="hidden lg:block" />
-			<Navbar />
+			<div>
+				<Navbar />
+			</div>
 			<main className="px-4 lg:px-24 xl:px-36">
 				<Hero />
 				<LanguagesTools />

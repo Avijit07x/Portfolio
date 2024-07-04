@@ -1,9 +1,26 @@
-import tools from "@/data/ToolsData";
+"use client";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
+export const getTools = async () => {
+	try {
+		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools");
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log({ error: error.message });
+	}
+};
 const LanguagesTools = () => {
+	const [tools, setTools] = useState([]);
+
+	useEffect(() => {
+		getTools().then((data) => {
+			setTools(data);
+		});
+	}, []);
+
 	return (
-		<div className="mt-20 w-full py-10">
+		<div className="mt-32 w-full">
 			<div className="space-y-4">
 				<h1 className="w-full text-center text-xs font-bold uppercase lg:text-sm">
 					<span className="text-primary">{"{ "}</span>
@@ -25,17 +42,23 @@ const LanguagesTools = () => {
 				</p>
 			</div>
 			<div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:mt-16">
-				{tools?.map((tool) => {
-					return (
-						<div
-							key={tool.name}
-							className="grid h-20 w-20 cursor-pointer place-items-center rounded-md bg-white drop-shadow-md"
-							title={tool.name}
-						>
-							<Image src={tool.image} alt={tool.name} width={40} height={40} />
-						</div>
-					);
-				})}
+				{tools &&
+					tools?.map((tool) => {
+						return (
+							<div
+								key={tool._id}
+								className="grid h-20 w-20 cursor-pointer place-items-center rounded-md bg-white drop-shadow-md"
+								title={tool.tools_name}
+							>
+								<Image
+									src={tool.image_url}
+									alt={tool.tools_name}
+									width={40}
+									height={40}
+								/>
+							</div>
+						);
+					})}
 			</div>
 		</div>
 	);

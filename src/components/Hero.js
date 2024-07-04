@@ -28,7 +28,7 @@ const Hero = () => {
 			initial={{ opacity: 0, y: 80 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ ease: "easeInOut", duration: 0.7 }}
-			className="flex h-dvh w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
+			className="flex h-svh w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
 		>
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">

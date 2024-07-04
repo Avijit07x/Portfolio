@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
 	title: "Avijit Dey - Web Developer Portfolio | Projects & Skills Showcase",
 	description:
-		"Welcome to Avijit Dey's portfolio! Explore my projects, skills, and professional journey. Built with Next.js, this site showcases my work in web development, programming, and design.",
+		"Welcome to my world of code and design! Explore my projects, skills, and journey as a developer and creator.",
 };
 
 export default function RootLayout({ children }) {
