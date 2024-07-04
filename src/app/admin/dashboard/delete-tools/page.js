@@ -12,18 +12,22 @@ const Page = () => {
 		});
 	}, []);
 	const handleDelete = async (id) => {
-		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ id: id }),
-		});
-		const data = await res.json();
-		console.log(data);
-		getTools().then((data) => {
-			setTools(data);
-		});
+		try {
+			const isOk = confirm("Are you sure?");
+			if (!isOk) return;
+			const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ id: id }),
+			});
+			const data = await res.json();
+			console.log(data);
+			getTools().then((data) => {
+				setTools(data);
+			});
+		} catch (error) {}
 	};
 
 	return (
