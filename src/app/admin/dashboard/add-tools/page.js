@@ -17,7 +17,7 @@ const Page = () => {
 				body: JSON.stringify({ tools_name, image_url }),
 			});
 			const data = await res.json();
-			console.log(data);
+
 			e.target.reset();
 			setToolUrl(null);
 		} catch (error) {
@@ -26,10 +26,10 @@ const Page = () => {
 	};
 
 	return (
-		<div className="mt-20 w-full">
+		<div className="mx-auto mt-20 w-3/4">
 			<form
 				onSubmit={handleFormSubmit}
-				className="mx-auto flex w-fit flex-col gap-8 rounded-lg bg-white p-6 shadow-lg"
+				className="flex flex-col gap-8 rounded-lg bg-white p-6 shadow-lg"
 			>
 				<h1 className="w-full text-center text-2xl font-semibold">Add Tools</h1>
 				<input
@@ -39,7 +39,7 @@ const Page = () => {
 					placeholder="Name"
 					required
 				/>
-				<div className="flex items-center justify-center gap-2 ">
+				<div className="flex w-full items-center gap-2">
 					<CldUploadWidget
 						uploadPreset="sadxcxfew"
 						signatureEndpoint={"/api/sign-cloudinary-params"}
@@ -63,6 +63,7 @@ const Page = () => {
 						name="image_url"
 						defaultValue={toolUrl}
 						required
+						className="w-full"
 						placeholder="Upload an image"
 					/>
 				</div>

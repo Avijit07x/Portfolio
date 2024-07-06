@@ -24,15 +24,16 @@ const Page = () => {
 			});
 			const data = await res.json();
 			console.log(data);
-			getTools().then((data) => {
-				setTools(data);
-			});
-		} catch (error) {}
+			const tools = await getTools();
+			setTools(tools);
+		} catch (error) {
+			console.log({ error: error.message });
+		}
 	};
 
 	return (
 		<div className="w-full">
-			<div className="mx-auto w-1/2 space-y-4 p-10">
+			<div className="mx-auto space-y-4 p-10 lg:w-3/4">
 				<h1 className="text-center text-2xl font-semibold">Delete Tools</h1>
 
 				{tools &&
