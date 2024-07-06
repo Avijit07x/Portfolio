@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import MenuIcon from "./icons/Menu";
 import { HandleSingOut } from "@/lib/actions";
-const Dashboard = ({ session, children }) => {
+const Dashboard = ({ session }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -32,14 +32,10 @@ const Dashboard = ({ session, children }) => {
 					</div>
 				</div>
 			</nav>
-			<div className="relative flex w-full pt-[3.5rem]">
-				<div
-					className={`fixed z-10 h-full w-3/5 bg-blue-500 px-5 transition-all duration-300 ease-in-out ${isOpen ? "left-0 opacity-100" : "-left-full opacity-0"} lg:left-0 lg:w-[15%] lg:opacity-100`}
-				>
-					<DashboardSideBar session={session} />
-				</div>
-
-				<div className="h-full w-full lg:ml-[15%]">{children}</div>
+			<div
+				className={`fixed h-full w-3/5 bg-blue-500 px-5 pt-[3.9rem] transition-all duration-300 ease-in-out ${isOpen ? "left-0 opacity-100" : "-left-full opacity-0"} lg:left-0 lg:w-[15%] lg:opacity-100`}
+			>
+				<DashboardSideBar session={session} />
 			</div>
 		</>
 	);

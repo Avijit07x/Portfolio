@@ -5,8 +5,9 @@ const Layout = async ({ children }) => {
 	const session = await auth();
 
 	return (
-		<div className="relative h-screen w-full bg-white">
-			<Dashboard session={session} children={children} />
+		<div className="relative w-full bg-white">
+			<Dashboard session={session} />
+			<div className="w-full lg:ml-[15%] lg:w-[75%] pt-[3.5rem]">{children}</div>
 		</div>
 	);
 };

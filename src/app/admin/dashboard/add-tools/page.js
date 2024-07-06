@@ -26,7 +26,7 @@ const Page = () => {
 	};
 
 	return (
-		<div className="mx-auto mt-20 w-3/4">
+		<div className="mx-auto mt-10 px-5 lg:w-3/4">
 			<form
 				onSubmit={handleFormSubmit}
 				className="flex flex-col gap-8 rounded-lg bg-white p-6 shadow-lg"
