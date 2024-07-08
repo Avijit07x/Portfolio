@@ -4,12 +4,10 @@ import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
-import { Toaster } from "sonner";
 
 const Page = () => {
 	return (
 		<>
-			<Toaster position="bottom-right" richColors className="hidden lg:block" />
 			<div>
 				<Navbar />
 			</div>

@@ -2,7 +2,7 @@
 import { HandleSingIn } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import ReactLoading from "react-loading";
+import { ClipLoader } from "react-spinners";
 
 const LoginForm = () => {
 	const router = useRouter();
@@ -31,7 +31,7 @@ const LoginForm = () => {
 	};
 	const handleUnauthorized = () => {
 		setUnauthorized(false);
-		// router.push("/");
+		router.push("/");
 	};
 	return (
 		<>
@@ -69,17 +69,16 @@ const LoginForm = () => {
 								required
 							/>
 							<button
-								className="rounded-lg bg-blue-500 p-2 text-white"
+								className="grid h-10 place-items-center rounded-lg bg-blue-500 text-white"
 								type="submit"
 								disabled={isLoading}
 							>
 								{isLoading ? (
-									<ReactLoading
-										type="spin"
-										color="white"
-										height={23}
-										width={23}
-										className="mx-auto"
+									<ClipLoader
+										size={22}
+										color="#ffffff"
+										aria-label="Loading Spinner"
+										data-testid="loader"
 									/>
 								) : (
 									"Login"

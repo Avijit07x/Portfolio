@@ -1,8 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast } from "sonner";
-import { ClipLoader, PropagateLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners";
 
 const ContactForm = () => {
 	const form = useRef();
@@ -11,7 +10,6 @@ const ContactForm = () => {
 	const sendEmail = (e) => {
 		e.preventDefault();
 		setIsSubmitting(true);
-		const loadingToast = toast.loading("Sending email...");
 		emailjs
 			.sendForm(
 				process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -23,10 +21,8 @@ const ContactForm = () => {
 			)
 			.then(
 				() => {
-					toast.dismiss(loadingToast);
 					console.log("SUCCESS!");
 					e.target.reset();
-					toast.success("Email sent successfully");
 					setIsSubmitting(false);
 				},
 				(error) => {
