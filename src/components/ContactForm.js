@@ -2,7 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
-import ReactLoading from "react-loading";
+import { ClipLoader, PropagateLoader } from "react-spinners";
 
 const ContactForm = () => {
 	const form = useRef();
@@ -80,12 +80,17 @@ const ContactForm = () => {
 				required
 			></textarea>
 			<button
-				className="mx-auto w-fit rounded-md bg-primary px-5 py-2 text-white"
+				className="mx-auto grid h-9 w-20 place-items-center rounded-md bg-primary text-white"
 				type="submit"
 				disabled={isSubmitting}
 			>
 				{isSubmitting ? (
-					<ReactLoading type="spin" color="white" height={25} width={25} />
+					<ClipLoader
+						size={22}
+						color="#ffffff"
+						aria-label="Loading Spinner"
+						data-testid="loader"
+					/>
 				) : (
 					"Send"
 				)}
