@@ -30,11 +30,14 @@ const Page = () => {
 					}),
 				},
 			);
-
+			e.target.reset();
+			setImageUrl("");
+			setTags([]);
 			if (!res.ok) {
 				const data = await res.json();
 				console.log(data);
 			}
+			e.target.reset();
 		} catch (error) {
 			console.log({ error: error.message });
 		}

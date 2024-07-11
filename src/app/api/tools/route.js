@@ -20,9 +20,8 @@ export const POST = async (request) => {
 	try {
 		const newTools = await Tools(data);
 		await newTools.save();
-		console.log("tools created");
 		return NextResponse.json(
-			{ message: "OK" },
+			{ message: "tools created" },
 			{
 				status: 200,
 			},
