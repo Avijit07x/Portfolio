@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Page = () => {
 	const [toolUrl, setToolUrl] = useState(null);
-
+	const [publicId, setPublicId] = useState(null);
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
@@ -16,15 +16,13 @@ const Page = () => {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ tools_name, image_url }),
+				body: JSON.stringify({ tools_name, image_url, public_id: publicId }),
 			});
-
-			if (!res.ok) {
-				const data = await res.json();
-				console.log(data);
-			}
+			const data = await res.json();
+			console.log(data);
 			e.target.reset();
 			setToolUrl(null);
+			setPublicId("");
 		} catch (error) {
 			console.log({ error: error.message });
 		}
@@ -48,8 +46,11 @@ const Page = () => {
 					<CldUploadWidget
 						uploadPreset="sadxcxfew"
 						signatureEndpoint={"/api/sign-cloudinary-params"}
-						onUpload={(event) => {
-							setToolUrl(event.info.secure_url);
+						onSuccess={(e) => {
+							{
+								setPublicId(e.info.public_id);
+								setToolUrl(e.info.secure_url);
+							}
 						}}
 					>
 						{({ open }) => {

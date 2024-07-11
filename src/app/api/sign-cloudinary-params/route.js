@@ -17,3 +17,9 @@ export async function POST(request) {
 
 	return Response.json({ signature });
 }
+
+export const deleteImage = async (id) => {
+	await cloudinary.uploader.destroy(id, function (result) {
+		console.log(result);
+	});
+};

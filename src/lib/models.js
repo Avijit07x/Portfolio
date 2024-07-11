@@ -23,6 +23,7 @@ const adminDataSchema = new mongoose.Schema({
 const toolsSchema = new mongoose.Schema({
 	tools_name: { type: String, required: true },
 	image_url: { type: String, required: true },
+	public_id: { type: String, required: true },
 });
 
 const projectSchema = new mongoose.Schema({

@@ -1,6 +1,8 @@
 import { Tools } from "@/lib/models";
 import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
+import { v2 as cloudinary } from "cloudinary";
+import { deleteImage } from "../sign-cloudinary-params/route";
 
 export const GET = async (request) => {
 	try {
@@ -16,7 +18,6 @@ export const GET = async (request) => {
 
 export const POST = async (request) => {
 	const data = await request.json();
-	console.log(data);
 	try {
 		const newTools = await Tools(data);
 		await newTools.save();
@@ -32,11 +33,10 @@ export const POST = async (request) => {
 };
 
 export const DELETE = async (request) => {
-	const { id } = await request.json();
+	const { id, public_id } = await request.json();
 	try {
-		console.log(id);
 		await Tools.findByIdAndDelete(id);
-		console.log("tools deleted");
+		await deleteImage(public_id);
 		return NextResponse.json(
 			{ message: "tools deleted" },
 			{

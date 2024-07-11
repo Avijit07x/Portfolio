@@ -11,7 +11,7 @@ const Page = () => {
 			setTools(data);
 		});
 	}, []);
-	const handleDelete = async (id) => {
+	const handleDelete = async (id, public_id) => {
 		try {
 			const isOk = confirm("Are you sure?");
 			if (!isOk) return;
@@ -20,7 +20,7 @@ const Page = () => {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ id }),
+				body: JSON.stringify({ id, public_id }),
 			});
 			const data = await res.json();
 			console.log(data);
@@ -55,7 +55,7 @@ const Page = () => {
 								<button
 									className="rounded-lg bg-red-500 px-2 py-1 text-sm text-white"
 									onClick={() => {
-										handleDelete(tool._id);
+										handleDelete(tool._id, tool.public_id);
 									}}
 								>
 									Delete
