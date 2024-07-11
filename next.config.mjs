@@ -17,7 +17,7 @@ const nextConfig = {
 				headers: [
 					{
 						key: "Access-Control-Allow-Origin",
-						value: process.env.NEXT_PUBLIC_BASE_URL, // apni website ka URL yahan specify karo
+						value: process.env.NEXT_PUBLIC_BASE_URL, // <-- location the request will be allowed to be sent from
 					},
 					{
 						key: "Access-Control-Allow-Methods",
