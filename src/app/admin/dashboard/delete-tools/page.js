@@ -20,7 +20,7 @@ const Page = () => {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ id: id }),
+				body: JSON.stringify({ id }),
 			});
 			const data = await res.json();
 			console.log(data);

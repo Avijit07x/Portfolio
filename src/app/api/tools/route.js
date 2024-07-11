@@ -8,11 +8,6 @@ export const GET = async (request) => {
 		const tools = await Tools.find({});
 		return NextResponse.json(tools, {
 			status: 200,
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Methods": "POST",
-			},
 		});
 	} catch (error) {
 		return NextResponse.json({ error: error.message }, { status: 500 });
@@ -20,23 +15,16 @@ export const GET = async (request) => {
 };
 
 export const POST = async (request) => {
-	const { tools_name, image_url } = await request.json();
+	const data = await request.json();
+	console.log(data);
 	try {
-		const newTools = await Tools({
-			tools_name,
-			image_url,
-		});
+		const newTools = await Tools(data);
 		await newTools.save();
 		console.log("tools created");
 		return NextResponse.json(
 			{ message: "OK" },
 			{
 				status: 200,
-				headers: {
-					"Content-Type": "application/json",
-					"Access-Control-Allow-Origin": "*",
-					"Access-Control-Allow-Methods": "POST",
-				},
 			},
 		);
 	} catch (error) {
@@ -54,11 +42,6 @@ export const DELETE = async (request) => {
 			{ message: "tools deleted" },
 			{
 				status: 200,
-				headers: {
-					"Content-Type": "application/json",
-					"Access-Control-Allow-Origin": "*",
-					"Access-Control-Allow-Methods": "DELETE ",
-				},
 			},
 		);
 	} catch (error) {

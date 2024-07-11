@@ -8,16 +8,21 @@ const Page = () => {
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
-		const tools_name = formData.get("tools_name");
-		const image_url = formData.get("image_url");
-		console.log({ tools_name, image_url });
+		const { tools_name, image_url } = Object.fromEntries(formData);
+
 		try {
 			const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
 				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
 				body: JSON.stringify({ tools_name, image_url }),
 			});
-			const data = await res.json();
 
+			if (!res.ok) {
+				const data = await res.json();
+				console.log(data);
+			}
 			e.target.reset();
 			setToolUrl(null);
 		} catch (error) {
@@ -51,7 +56,10 @@ const Page = () => {
 							return (
 								<button
 									className="inline-block rounded-lg bg-gray-500/50 px-3 py-1 text-white"
-									onClick={() => open()}
+									onClick={(e) => {
+										e.preventDefault();
+										open();
+									}}
 								>
 									Upload
 								</button>
@@ -63,8 +71,9 @@ const Page = () => {
 						name="image_url"
 						defaultValue={toolUrl}
 						required
-						className="w-full"
+						className="w-full outline-none"
 						placeholder="Upload an image"
+						readOnly
 					/>
 				</div>
 				<button
