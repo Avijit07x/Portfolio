@@ -8,6 +8,7 @@ const Page = () => {
 	const [imageUrl, setImageUrl] = useState("");
 
 	const handleFormSubmit = async (e) => {
+		
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
 		const { title, description, github_url, live_url, image_url } =
