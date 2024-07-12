@@ -44,7 +44,7 @@ const Page = () => {
 				/>
 				<div className="flex w-full items-center gap-2">
 					<CldUploadWidget
-						uploadPreset="sadxcxfew"
+						uploadPreset={`${process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}`}
 						signatureEndpoint={"/api/sign-cloudinary-params"}
 						onSuccess={(e) => {
 							{

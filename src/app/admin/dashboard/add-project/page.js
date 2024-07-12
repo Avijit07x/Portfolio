@@ -8,7 +8,6 @@ const Page = () => {
 	const [imageUrl, setImageUrl] = useState("");
 
 	const handleFormSubmit = async (e) => {
-		
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
 		const { title, description, github_url, live_url, image_url } =
@@ -142,7 +141,7 @@ const Page = () => {
 				</div>
 				<div className="my-3 flex w-full items-center gap-2">
 					<CldUploadWidget
-						uploadPreset="sadxcxfew"
+						uploadPreset={`${process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET}`}
 						signatureEndpoint={"/api/sign-cloudinary-params"}
 						onUpload={(event) => {
 							setImageUrl(event.info.secure_url);
