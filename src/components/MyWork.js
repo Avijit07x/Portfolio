@@ -1,4 +1,21 @@
+"use client";
+import { useEffect, useState } from "react";
+import ProjectCard from "./ProjectCard";
+
 const MyWork = () => {
+	const [projects, setProjects] = useState([]);
+
+	useEffect(() => {
+		const getProjects = async () => {
+			const res = await fetch(
+				process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
+			);
+			const data = await res.json();
+			setProjects(data);
+		};
+		getProjects();
+	}, []);
+
 	return (
 		<div className="w-full space-y-4 py-20">
 			<h1 className="w-full text-center text-2xl font-semibold lg:text-3xl">
@@ -11,9 +28,6 @@ const MyWork = () => {
 				problem-solving to creative design. <br className="hidden lg:block" /> I
 				am always eager to take on new challenges and expand my horizons.
 			</p>
-
-			{/* TODO: Add projects here */}
-			<h1 className="w-full text-center text-2xl font-semibold">Soon...</h1>
 		</div>
 	);
 };

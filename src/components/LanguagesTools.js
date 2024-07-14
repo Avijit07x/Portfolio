@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 export const getTools = async () => {
 	try {
-		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools");
+		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
+			cache: "force-cache",
+		});
 		const data = await res.json();
 		return data;
 	} catch (error) {
@@ -14,9 +16,15 @@ const LanguagesTools = () => {
 	const [tools, setTools] = useState([]);
 
 	useEffect(() => {
-		getTools().then((data) => {
-			setTools(data);
-		});
+		const getData = async () => {
+			try {
+				const res = await getTools();
+				setTools(res);
+			} catch (error) {
+				console.log({ error: error.message });
+			}
+		};
+		getData();
 	}, []);
 
 	return (
