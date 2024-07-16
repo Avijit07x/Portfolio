@@ -26,6 +26,7 @@ const Page = () => {
 						name="userID"
 						id="userID"
 						placeholder="userID"
+						autoComplete="username"
 						required
 					/>
 					<label className="cursor-pointer" htmlFor="password">
@@ -37,6 +38,7 @@ const Page = () => {
 						name="password"
 						id="password"
 						placeholder="password"
+						autoComplete="current-password"
 						required
 					/>
 					<button

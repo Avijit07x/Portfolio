@@ -25,10 +25,12 @@ const Hero = () => {
 
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 80 }}
+			initial={{ opacity: 0, y: 60 }}
 			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ ease: "easeInOut", duration: 0.7 }}
+			transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
+			viewport={{ once: true }}
 			className="flex h-svh w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
+			style={{ willChange: "transform, opacity" }}
 		>
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
@@ -62,6 +64,7 @@ const Hero = () => {
 							repeat: Infinity,
 							repeatType: "reverse",
 						}}
+						style={{ willChange: "transform, opacity" }}
 					>
 						<Image
 							src="/mouse-cursor.png"
@@ -78,23 +81,17 @@ const Hero = () => {
 				</span>
 				<motion.div
 					animate={{ opacity: [0, 1, 0] }}
-					transition={{
-						duration: 6,
-						ease: "easeInOut",
-						repeat: Infinity,
-					}}
+					transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
 					className="relative top-10 h-[1.8rem] w-[1.8rem] lg:left-20 lg:top-[6rem]"
+					style={{ willChange: "opacity" }}
 				>
 					<Image src="/js.png" alt="logo" fill />
 				</motion.div>
 				<motion.div
 					className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] lg:-top-44 lg:left-[25rem]"
 					animate={{ rotate: 360 }}
-					transition={{
-						duration: 10,
-						ease: "linear",
-						repeat: Infinity,
-					}}
+					transition={{ duration: 10, ease: "linear", repeat: Infinity }}
+					style={{ willChange: "transform" }}
 				>
 					<Image src="/react.png" alt="react logo" fill />
 				</motion.div>
@@ -105,6 +102,7 @@ const Hero = () => {
 					animate={{ y: [0, -20, 0] }}
 					transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
 					className="relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]"
+					style={{ willChange: "transform" }}
 				>
 					<Image
 						className="object-contain"

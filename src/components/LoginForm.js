@@ -59,6 +59,7 @@ const LoginForm = () => {
 								type="text"
 								name="userID"
 								placeholder="User ID"
+								autoComplete="username"
 								required
 							/>
 							<input
@@ -66,6 +67,7 @@ const LoginForm = () => {
 								type="password"
 								name="password"
 								placeholder="Password"
+								autoComplete="current-password"
 								required
 							/>
 							<button

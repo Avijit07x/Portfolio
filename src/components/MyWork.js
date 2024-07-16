@@ -28,6 +28,13 @@ const MyWork = () => {
 				problem-solving to creative design. <br className="hidden lg:block" /> I
 				am always eager to take on new challenges and expand my horizons.
 			</p>
+
+			<div>
+				{projects &&
+					projects.map((project) => (
+						<ProjectCard key={project._id} project={project} />
+					))}
+			</div>
 		</div>
 	);
 };

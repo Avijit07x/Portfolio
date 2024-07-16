@@ -131,7 +131,7 @@ const Page = () => {
 					<input
 						className="w-full rounded-lg p-2 outline-none ring-1 focus:ring"
 						type="text"
-						placeholder="Add tag"
+						placeholder="Add tag (Max 5)"
 						name="tagInput"
 						id="tagInput"
 						value={tagValue}
