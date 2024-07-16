@@ -5,14 +5,9 @@ import { NextResponse } from "next/server";
 export const GET = async (request) => {
 	try {
 		await connectToDb();
-		const user = await UserData.find();
+		const user = await UserData.find({});
 		return NextResponse.json(user, {
 			status: 200,
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Methods": "GET",
-			},
 		});
 	} catch (error) {
 		return NextResponse.json({ error: error.message });

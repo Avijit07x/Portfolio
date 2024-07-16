@@ -59,6 +59,7 @@ const LanguagesTools = () => {
 								title={tool.tools_name}
 							>
 								<Image
+									className="h-10 w-10 object-contain"
 									src={tool.image_url}
 									alt={tool.tools_name}
 									width={40}

@@ -15,7 +15,7 @@ const Hero = () => {
 					{ cache: "default" },
 				);
 				const data = await res.json();
-				setUserData(data);
+				setUserData(data[0]);
 			} catch (error) {
 				console.log({ error: error.message });
 			}
@@ -35,21 +35,21 @@ const Hero = () => {
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
 					Hello, <br /> I&#39;m{" "}
-					<span className="text-primary">{userData?.[0].name}</span>
+					<span className="text-primary">{userData?.name}</span>
 				</h1>
 				<p className="font-semibold">
 					<span className="text-primary">{"{ "}</span>
-					{userData?.[0].profession}
+					{userData?.profession}
 					<span className="text-primary">{" }"}</span>
 				</p>
-				<p className="text-sm lg:text-base">{userData?.[0].desc}</p>
+				<p className="text-sm lg:text-base">{userData?.desc}</p>
 				<div className="space-x-4">
 					<Link href="#contact">
 						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
 							Contact Me
 						</button>
 					</Link>
-					<Link href={`${userData?.[0].resume}`}>
+					<Link href={`${userData?.resume}`}>
 						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
 							My Resume
 						</button>
@@ -85,7 +85,7 @@ const Hero = () => {
 					className="relative top-10 h-[1.8rem] w-[1.8rem] lg:left-20 lg:top-[6rem]"
 					style={{ willChange: "opacity" }}
 				>
-					<Image src="/js.png" alt="logo" fill />
+					<Image src="/js.png" alt="logo" fill sizes="(100vw, 100vh)" />
 				</motion.div>
 				<motion.div
 					className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] lg:-top-44 lg:left-[25rem]"
@@ -93,10 +93,20 @@ const Hero = () => {
 					transition={{ duration: 10, ease: "linear", repeat: Infinity }}
 					style={{ willChange: "transform" }}
 				>
-					<Image src="/react.png" alt="react logo" fill />
+					<Image
+						src="/react.png"
+						alt="react logo"
+						fill
+						sizes="(100vw, 100vh)"
+					/>
 				</motion.div>
 				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
-					<Image src="/next-js.png" alt="next-js logo" fill />
+					<Image
+						src="/next-js.png"
+						alt="next-js logo"
+						fill
+						sizes="(100vw, 100vh)"
+					/>
 				</div>
 				<motion.div
 					animate={{ y: [0, -20, 0] }}
@@ -110,6 +120,7 @@ const Hero = () => {
 						alt="face logo"
 						fill
 						priority
+						sizes="(100vw, 100vh)"
 					/>
 				</motion.div>
 			</div>

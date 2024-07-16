@@ -18,14 +18,14 @@ const ProjectCard = ({ project }) => {
 						{project.title}
 					</h1>
 					<p className="">{project.description}</p>
-					<p className="flex flex-wrap items-center gap-3 text-primary">
+					<div className="flex flex-wrap items-center gap-3 text-primary">
 						<h2 className="font-medium">Tools :</h2>
 						{project.tags.map((tag, index) => (
 							<span key={index} className="text-sm">
 								{tag}
 							</span>
 						))}
-					</p>
+					</div>
 					<div className="flex gap-4">
 						<Link
 							href={project.github_url}
@@ -45,11 +45,12 @@ const ProjectCard = ({ project }) => {
 				</div>
 				<div className="relative h-48 w-72 shadow-md lg:order-2 lg:h-[15rem] lg:w-[28rem]">
 					<Image
+					className="object-top object-cover"
 						src={project.image_url}
 						alt={project.title}
 						fill
-						objectFit="cover"
-						objectPosition="top"
+						sizes="(100vw, 100vh)"
+						priority
 					/>
 				</div>
 			</motion.div>
