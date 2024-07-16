@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Hero = () => {
-	const [userData, setUserData] = useState(null);
+	const [userData, setUserData] = useState([]);
 
 	useEffect(() => {
 		const getData = async () => {
