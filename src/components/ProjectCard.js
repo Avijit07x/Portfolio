@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProjectCard = ({ project }) => {
-	console.log(project);
 	return (
 		<>
 			<motion.div
