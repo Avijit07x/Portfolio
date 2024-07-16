@@ -43,22 +43,48 @@ To run this project locally, follow these steps:
 
    ```bash
    npm install
+
+   or
+
+   bun install
    ```
 
 3. **Set up environment variables**:
    Create a `.env.local` file in the root directory and add your environment variables:
 
    ```env
-   NEXT_PUBLIC_BASE_URL = your_mongodb_connection_string
-   NEXT_PUBLIC_EMAILJS_SERVICE_ID = your_emailjs_service_id
-   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = your_emailjs_template_id
-   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = your_emailjs_public_key
+
+   NEXT_PUBLIC_BASE_URL = ""
+
+   MONGODB_URL = "YOUR_MONGODB_URL"
+
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID = "EMAILJS_SERVICE_ID"
+
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = "EMAILJS_TEMPLATE_ID"
+
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = "EMAILJS_PUBLIC_KEY"
+
+   NEXTAUTH_URL = ""
+
+   NEXTAUTH_SECRET = ""
+
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = "CLOUDINARY_CLOUD_NAME"
+
+   NEXT_PUBLIC_CLOUDINARY_API_KEY = "CLOUDINARY_API_KEY"
+
+   NEXT_PUBLIC_CLOUDINARY_API_SECRET = "CLOUDINARY_API_SECRET"
+
+   NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET = "CLOUDINARY_UPLOAD_PRESET"
    ```
 
 4. **Run the development server**:
 
    ```bash
    npm run dev
+
+   or 
+
+   bun dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
