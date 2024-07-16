@@ -17,7 +17,7 @@ const MyWork = () => {
 	}, []);
 
 	return (
-		<div className="w-full space-y-4 py-20">
+		<div className="w-full space-y-4 overflow-x-hidden py-20">
 			<h1 className="w-full text-center text-2xl font-semibold lg:text-3xl">
 				<span className="text-primary">{"{ "}</span>
 				My Projects
