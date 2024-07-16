@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
-    "@vercel/speed-insights": "^1.0.12",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.2.0",
     "framer-motion": "^11.2.12",
