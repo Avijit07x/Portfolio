@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { MoonLoader } from "react-spinners";
 export const getTools = async () => {
 	try {
 		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
@@ -50,7 +51,7 @@ const LanguagesTools = () => {
 				</p>
 			</div>
 			<div className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:mt-16">
-				{tools &&
+				{tools?.length !== 0 ? (
 					tools?.map((tool) => {
 						return (
 							<div
@@ -67,7 +68,19 @@ const LanguagesTools = () => {
 								/>
 							</div>
 						);
-					})}
+					})
+				) : (
+					<div className="mt-10 flex items-center justify-center gap-2">
+						<MoonLoader
+							color="#ef4e19"
+							loading
+							size={18}
+							aria-label="Loading Spinner"
+							data-testid="loader"
+						/>
+						<p className="text-center">Loading...</p>
+					</div>
+				)}
 			</div>
 		</div>
 	);

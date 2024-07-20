@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { MoonLoader } from "react-spinners";
 
 const MyWork = () => {
 	const [projects, setProjects] = useState([]);
@@ -11,6 +12,7 @@ const MyWork = () => {
 				process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
 			);
 			const data = await res.json();
+
 			setProjects(data);
 		};
 		getProjects();
@@ -30,10 +32,22 @@ const MyWork = () => {
 			</p>
 
 			<div>
-				{projects &&
+				{projects.length !== 0 ? (
 					projects.map((project) => (
 						<ProjectCard key={project._id} project={project} />
-					))}
+					))
+				) : (
+					<div className="mt-10 flex items-center justify-center gap-2">
+						<MoonLoader
+							color="#ef4e19"
+							loading
+							size={18}
+							aria-label="Loading Spinner"
+							data-testid="loader"
+						/>
+						<p className="text-center">Loading...</p>
+					</div>
+				)}
 			</div>
 		</div>
 	);

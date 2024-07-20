@@ -8,9 +8,9 @@ import Navbar from "@/components/Navbar";
 const Page = () => {
 	return (
 		<>
-			<div>
+			<header>
 				<Navbar />
-			</div>
+			</header>
 			<main className="px-4 lg:px-24 xl:px-36">
 				<Hero />
 				<LanguagesTools />
