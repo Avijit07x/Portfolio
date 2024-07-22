@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { MoonLoader } from "react-spinners";
-import { headers } from "next/headers";
 
 const MyWork = () => {
 	const [projects, setProjects] = useState([]);
