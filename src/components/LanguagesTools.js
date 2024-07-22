@@ -5,7 +5,6 @@ import { MoonLoader } from "react-spinners";
 export const getTools = async () => {
 	try {
 		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
-			cache: "force-cache",
 			headers: {
 				"Content-Type": "application/json",
 			},
