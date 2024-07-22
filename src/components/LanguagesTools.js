@@ -6,13 +6,18 @@ export const getTools = async () => {
 	try {
 		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
 			cache: "force-cache",
+			headers: {
+				"Content-Type": "application/json",
+			},
 		});
 		const data = await res.json();
 		return data;
 	} catch (error) {
 		console.log({ error: error.message });
+		return [];
 	}
 };
+
 const LanguagesTools = () => {
 	const [tools, setTools] = useState([]);
 

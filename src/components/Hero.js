@@ -12,7 +12,12 @@ const Hero = () => {
 			try {
 				const res = await fetch(
 					`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`,
-					{ cache: "default" },
+					{
+						cache: "force-cache",
+						headers: {
+							"Content-Type": "application/json",
+						},
+					},
 				);
 				const data = await res.json();
 				setUserData(data[0]);

@@ -10,6 +10,12 @@ const MyWork = () => {
 		const getProjects = async () => {
 			const res = await fetch(
 				process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
+				{
+					cache: "force-cache",
+					headers: {
+						"Content-Type": "application/json",
+					},
+				},
 			);
 			const data = await res.json();
 
