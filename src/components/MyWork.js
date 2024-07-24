@@ -17,8 +17,7 @@ const MyWork = () => {
 				},
 			);
 			const data = await res.json();
-
-			setProjects(data);
+			setProjects(data.reverse());
 		};
 		getProjects();
 	}, []);
