@@ -3,8 +3,8 @@ import { CldUploadWidget } from "next-cloudinary";
 import { useState } from "react";
 
 const Page = () => {
-	const [toolUrl, setToolUrl] = useState(null);
-	const [publicId, setPublicId] = useState(null);
+	const [toolUrl, setToolUrl] = useState("");
+	const [publicId, setPublicId] = useState("");
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
@@ -21,7 +21,7 @@ const Page = () => {
 			const data = await res.json();
 			console.log(data);
 			e.target.reset();
-			setToolUrl(null);
+			setToolUrl("");
 			setPublicId("");
 		} catch (error) {
 			console.log({ error: error.message });

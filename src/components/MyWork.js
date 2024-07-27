@@ -36,7 +36,7 @@ const MyWork = () => {
 			</p>
 
 			<div>
-				{projects.length !== 0 ? (
+				{projects && projects.length !== 0 ? (
 					projects.map((project) => (
 						<ProjectCard key={project._id} project={project} />
 					))
