@@ -54,11 +54,7 @@ const Hero = () => {
 							Contact Me
 						</button>
 					</Link>
-					<Link href={`${userData?.resume}`}>
-						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
-							My Resume
-						</button>
-					</Link>
+					
 				</div>
 				<div className="grid place-items-center lg:place-content-start">
 					<motion.div
