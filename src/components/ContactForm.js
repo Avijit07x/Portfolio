@@ -76,7 +76,7 @@ const ContactForm = () => {
 				required
 			></textarea>
 			<button
-				className="mx-auto grid h-9 w-20 place-items-center rounded-md bg-[#ef233c] text-[#edf6f9] transition-colors hover:bg-primary/90 font-semibold"
+				className="mx-auto grid h-9 w-20 place-items-center rounded-md border border-primary font-semibold transition-colors hover:bg-primary/90 hover:text-white"
 				type="submit"
 				disabled={isSubmitting}
 			>
