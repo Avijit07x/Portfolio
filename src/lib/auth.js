@@ -5,10 +5,10 @@ import bcrypt from "bcryptjs";
 import { AdminData } from "./models";
 import { authConfig } from "./auth.config";
 
-const login = async ({ userID, password }) => {
+const login = async ({ user_id, password }) => {
 	try {
 		await connectToDb();
-		const admin = await AdminData.findOne({ userID });
+		const admin = await AdminData.findOne({ userID: user_id });
 		if (!admin) {
 			throw new Error("Admin not found");
 		}

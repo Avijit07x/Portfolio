@@ -7,15 +7,16 @@ import bcrypt from "bcryptjs";
 
 export const HandleSingIn = async (formData) => {
 	const { userID, password } = Object.fromEntries(formData);
+	const user_id = userID.trim();
 	try {
 		const response = await signIn("credentials", {
 			redirect: false,
-			userID,
+			user_id,
 			password,
 		});
 		return response;
 	} catch (error) {
-		console.log({ error: error.message });
+		console.error({ "Sign-in error": error.message });
 		return null;
 	}
 };
