@@ -12,6 +12,9 @@ const login = async ({ user_id, password }) => {
 		if (!admin) {
 			throw new Error("Admin not found");
 		}
+		// if(admin.password !== password){
+		// 	throw new Error("Incorrect password");
+		// }
 		const match = await bcrypt.compare(password, admin.password);
 		if (!match) {
 			throw new Error("Incorrect password");
