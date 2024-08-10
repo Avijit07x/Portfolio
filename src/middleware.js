@@ -5,6 +5,7 @@ import NextAuth from "next-auth";
 const { auth } = NextAuth(authConfig);
 
 export async function middleware(request) {
+	
 	const session = await auth();
 	const isLoginPage = request.nextUrl.pathname.startsWith("/admin/login");
 	const isDashboardPage =
