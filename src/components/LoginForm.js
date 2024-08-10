@@ -18,7 +18,6 @@ const LoginForm = () => {
 			const formData = new FormData(e.currentTarget);
 			const res = await HandleSingIn(formData);
 			if (!!res.ok) {
-				console.log({ res });
 				setError("Something went wrong");
 				setIsLoading(false);
 			} else {
@@ -74,10 +73,10 @@ const LoginForm = () => {
 							type="submit"
 							disabled={isLoading}
 						>
-							{!isLoading ? (
+							{isLoading ? (
 								<PropagateLoader
 									className="mb-2"
-									size={9}
+									size={8}
 									color="#ffffff"
 									aria-label="Loading Spinner"
 									data-testid="loader"
