@@ -2,7 +2,7 @@
 import { HandleSingIn } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ClipLoader } from "react-spinners";
+import { ClipLoader, PropagateLoader } from "react-spinners";
 import EyeOpen from "./icons/EyeOpen";
 import EyeClose from "./icons/EyeClose";
 
@@ -70,13 +70,14 @@ const LoginForm = () => {
 							</div>
 						</div>
 						<button
-							className="grid h-10 place-items-center rounded-lg bg-blue-500 text-white"
+							className="flex h-10 items-center justify-center rounded-lg bg-blue-500 text-white"
 							type="submit"
 							disabled={isLoading}
 						>
-							{isLoading ? (
-								<ClipLoader
-									size={22}
+							{!isLoading ? (
+								<PropagateLoader
+									className="mb-2"
+									size={9}
 									color="#ffffff"
 									aria-label="Loading Spinner"
 									data-testid="loader"
