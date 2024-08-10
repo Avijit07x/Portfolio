@@ -10,11 +10,8 @@ const login = async ({ user_id, password }) => {
 		await connectToDb();
 		const admin = await AdminData.findOne({ userID: user_id });
 		if (!admin) {
-			throw new Error("Admin not found");
+			throw new Error("Admin not found from");
 		}
-		// if(admin.password !== password){
-		// 	throw new Error("Incorrect password");
-		// }
 		const match = await bcrypt.compare(password, admin.password);
 		if (!match) {
 			throw new Error("Incorrect password");
@@ -36,12 +33,17 @@ export const {
 	providers: [
 		CredentialsProvider({
 			async authorize(credentials) {
-				if (credentials === null) return null;
-				const admin = await login(credentials);
-				if (!admin) {
-					throw new Error("Admin not found");
+				try {
+					if (credentials === null) return null;
+					const admin = await login(credentials);
+					if (!admin) {
+						throw new Error("Invalid credentials");
+					}
+					return admin;
+				} catch (error) {
+					console.log({ error: error.message });
+					return null;
 				}
-				return admin;
 			},
 		}),
 	],
