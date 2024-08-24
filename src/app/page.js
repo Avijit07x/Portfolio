@@ -1,11 +1,52 @@
+"use client";
+
 import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
+import { useEffect, useState } from "react";
 
 const Page = () => {
+	const [tools, setTools] = useState([]);
+	const [projects, setProjects] = useState([]);
+
+	useEffect(() => {
+		const getTools = async () => {
+			try {
+				const res = await fetch(
+					process.env.NEXT_PUBLIC_BASE_URL + "api/tools",
+					{
+						headers: {
+							"Content-Type": "application/json",
+						},
+					},
+				);
+				const data = await res.json();
+				setTools(data);
+			} catch (error) {
+				console.log({ error: error.message });
+				return [];
+			}
+		};
+		const getProjects = async () => {
+			const res = await fetch(
+				process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
+				{
+					headers: {
+						"Content-Type": "application/json",
+					},
+				},
+			);
+			const data = await res.json();
+			setProjects(data.reverse());
+		};
+
+		getTools();
+		getProjects();
+	}, []);
+	
 	return (
 		<>
 			<header>
@@ -13,8 +54,8 @@ const Page = () => {
 			</header>
 			<main className="px-4 lg:px-24 xl:px-36">
 				<Hero />
-				<LanguagesTools />
-				<MyWork />
+				<LanguagesTools tools={tools} />
+				<MyWork projects={projects} />
 				<ContactMe />
 			</main>
 			<Footer />
