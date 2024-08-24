@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { ClipLoader } from "react-spinners";
+import { ClipLoader, SyncLoader } from "react-spinners";
 
 const ContactForm = () => {
 	const form = useRef();
@@ -76,13 +76,13 @@ const ContactForm = () => {
 				required
 			></textarea>
 			<button
-				className="mx-auto grid h-9 w-20 place-items-center rounded-md border border-primary font-semibold transition-colors hover:bg-primary/90 hover:text-white"
+				className={` ${isSubmitting ? "bg-primary" : ""} mx-auto h-9 w-20 rounded-md border-[1.5px] border-primary font-semibold transition-colors hover:bg-primary/90 hover:text-white`}
 				type="submit"
 				disabled={isSubmitting}
 			>
 				{isSubmitting ? (
-					<ClipLoader
-						size={22}
+					<SyncLoader
+						size={8}
 						color="#ffffff"
 						aria-label="Loading Spinner"
 						data-testid="loader"

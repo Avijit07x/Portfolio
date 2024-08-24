@@ -2,7 +2,7 @@
 import { HandleSingIn } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { ClipLoader, PropagateLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 import EyeOpen from "./icons/EyeOpen";
 import EyeClose from "./icons/EyeClose";
 

@@ -1,37 +1,7 @@
-"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
-export const getTools = async () => {
-	try {
-		const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
-			headers: {
-				"Content-Type": "application/json",
-			},
-		});
-		const data = await res.json();
-		return data;
-	} catch (error) {
-		console.log({ error: error.message });
-		return [];
-	}
-};
 
-const LanguagesTools = () => {
-	const [tools, setTools] = useState([]);
-
-	useEffect(() => {
-		const getData = async () => {
-			try {
-				const res = await getTools();
-				setTools(res);
-			} catch (error) {
-				console.log({ error: error.message });
-			}
-		};
-		getData();
-	}, []);
-
+const LanguagesTools = ({ tools }) => {
 	return (
 		<div className="mt-32 w-full">
 			<div className="space-y-4">
