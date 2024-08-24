@@ -1,6 +1,4 @@
 "use client";
-
-import { getTools } from "@/components/LanguagesTools";
 import Image from "next/image";
 import { useEffect, useState, useMemo } from "react";
 
@@ -9,9 +7,25 @@ const Page = () => {
 	const [text, setText] = useState("");
 
 	useEffect(() => {
-		getTools().then((data) => {
-			setTools(data);
-		});
+		const getTools = async () => {
+			try {
+				const res = await fetch(
+					process.env.NEXT_PUBLIC_BASE_URL + "api/tools",
+					{
+						headers: {
+							"Content-Type": "application/json",
+						},
+					},
+				);
+				const data = await res.json();
+				setTools(data);
+			} catch (error) {
+				console.log({ error: error.message });
+				return [];
+			}
+		};
+
+		getTools();
 	}, []);
 
 	const handleDelete = async (id, public_id) => {
