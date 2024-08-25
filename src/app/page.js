@@ -1,43 +1,62 @@
+"use client";
+
 import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
+import { useEffect, useState } from "react";
 
-export const getServerSideProps = async () => {
-	try {
-		const [toolsRes, projectsRes, userDataRes] = await Promise.all([
-			fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
-				headers: { "Content-Type": "application/json" },
-			}),
-			fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/projects", {
-				headers: { "Content-Type": "application/json" },
-			}),
-			fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`, {
-				cache: "force-cache",
-				headers: { "Content-Type": "application/json" },
-			}),
-		]);
+const Page = () => {
+	const [tools, setTools] = useState([]);
+	const [projects, setProjects] = useState([]);
+	const [userData, setUserData] = useState([]);
+	const [loading, setLoading] = useState(true);
 
-		const tools = await toolsRes.json();
-		const projects = await projectsRes.json();
-		const userData = await userDataRes.json();
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const [toolsRes, projectsRes, userDataRes] = await Promise.all([
+					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}),
+					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/projects", {
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}),
+					fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`, {
+						cache: "force-cache",
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}),
+				]);
 
-		return {
-			props: {
-				tools,
-				projects: projects.reverse(),
-				userData: userData[0],
-			},
+				const toolsData = await toolsRes.json();
+				const projectsData = await projectsRes.json();
+				const userDataData = await userDataRes.json();
+
+				setTools(toolsData);
+				setProjects(projectsData.reverse());
+				setUserData(userDataData[0]);
+			} catch (error) {
+				console.log({ error: error.message });
+			} finally {
+				setLoading(false);
+			}
 		};
-	} catch (error) {
-		console.error(error);
-		return { props: { tools: [], projects: [], userData: {} } };
-	}
-};
 
-const Page = ({ tools, projects, userData }) => {
+		fetchData();
+	}, []);
+
+	if (loading) {
+		return <div className="flex justify-center items-center h-screen">Loading...</div>;
+	}
+
 	return (
 		<>
 			<header>
