@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = ({ userData }) => {
 	return (
-		<div className="animate-fadeInAndSlideUp flex h-svh w-full flex-col-reverse items-center justify-center opacity-0 lg:h-screen lg:flex-row lg:justify-between">
+		<div className="flex h-svh w-full animate-fadeInAndSlideUp flex-col-reverse items-center justify-center opacity-0 lg:h-screen lg:flex-row lg:justify-between">
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
 					Hello, <br /> I&#39;m{" "}
@@ -44,15 +44,16 @@ const Hero = ({ userData }) => {
 				<span className="relative -top-44 left-52 hidden w-[10rem] rounded-full bg-white px-3 py-1 text-center font-medium shadow-md xl:inline">
 					Web Developer
 				</span>
-				<div className="animate-fadeInOut relative top-10 h-[1.8rem] w-[1.8rem] lg:left-20 lg:top-[6rem]">
+				<div className="relative top-10 h-[1.8rem] w-[1.8rem] animate-fadeInOut lg:left-20 lg:top-[6rem]">
 					<Image src="/js.png" alt="logo" fill sizes="(100vw, 100vh)" />
 				</div>
-				<div className="animate-spinSlow relative left-52 top-52 h-[1.8rem] w-[1.8rem] lg:-top-44 lg:left-[25rem]">
+				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spinSlow lg:-top-44 lg:left-[25rem]">
 					<Image
 						src="/react.png"
 						alt="react logo"
 						fill
 						sizes="(100vw, 100vh)"
+						quality={20}
 					/>
 				</div>
 				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
@@ -63,7 +64,7 @@ const Hero = ({ userData }) => {
 						sizes="(100vw, 100vh)"
 					/>
 				</div>
-				<div className="animate-bounceSlow relative h-60 w-60 lg:h-[25rem] lg:w-[25rem]">
+				<div className="relative h-60 w-60 animate-bounceSlow lg:h-[25rem] lg:w-[25rem]">
 					<Image
 						className="object-contain"
 						src="/face.png"
