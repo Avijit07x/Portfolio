@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
 						alt={project.title}
 						fill
 						sizes="(100vw, 100vh)"
-						priority
+						loading="lazy"
 					/>
 				</div>
 			</motion.div>

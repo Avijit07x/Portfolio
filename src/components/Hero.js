@@ -49,15 +49,17 @@ const Hero = ({ userData }) => {
 				</div>
 				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spinSlow lg:-top-44 lg:left-[25rem]">
 					<Image
+						className="object-contain"
 						src="/react.png"
 						alt="react logo"
 						fill
 						sizes="(100vw, 100vh)"
-						quality={20}
+						quality={90}
 					/>
 				</div>
-				<div className="relative left-80 top-32 hidden h-[1.8rem] w-[3rem] lg:block">
+				<div className="relative left-[22rem] top-32 hidden h-[3rem] w-[3rem] lg:block">
 					<Image
+						className="object-contain"
 						src="/next-js.png"
 						alt="next-js logo"
 						fill
