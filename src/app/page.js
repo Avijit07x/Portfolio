@@ -4,6 +4,7 @@ import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
+import LoadingScreen from "@/components/LoadingScreen";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
@@ -19,11 +20,13 @@ const Page = () => {
 			try {
 				const [toolsRes, projectsRes, userDataRes] = await Promise.all([
 					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
+						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},
 					}),
 					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/projects", {
+						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},
@@ -54,7 +57,7 @@ const Page = () => {
 	}, []);
 
 	if (loading) {
-		return <div className="flex justify-center items-center h-screen">Loading...</div>;
+		return <LoadingScreen />;
 	}
 
 	return (

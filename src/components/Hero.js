@@ -54,7 +54,7 @@ const Hero = ({ userData }) => {
 						alt="react logo"
 						fill
 						sizes="(100vw, 100vh)"
-						quality={90}
+						quality={100}
 					/>
 				</div>
 				<div className="relative left-[22rem] top-32 hidden h-[3rem] w-[3rem] lg:block">
