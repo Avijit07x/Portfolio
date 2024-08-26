@@ -1,49 +1,42 @@
 import { Tools } from "@/lib/models";
 import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
-import { v2 as cloudinary } from "cloudinary";
 import { deleteImage } from "../sign-cloudinary-params/route";
 
-export const GET = async (request) => {
+export const GET = async () => {
 	try {
 		await connectToDb();
 		const tools = await Tools.find({});
-		return NextResponse.json(tools, {
-			status: 200,
-		});
+		return NextResponse.json(tools, { status: 200 });
 	} catch (error) {
-		return NextResponse.json({ error: error.message }, { status: 500 });
+		return handleError(error);
 	}
 };
 
 export const POST = async (request) => {
-	const data = await request.json();
 	try {
-		const newTools = await Tools(data);
+		const data = await request.json();
+		await connectToDb();
+		const newTools = new Tools(data);
 		await newTools.save();
-		return NextResponse.json(
-			{ message: "tools created" },
-			{
-				status: 200,
-			},
-		);
+		return NextResponse.json({ message: "Tool created" }, { status: 201 });
 	} catch (error) {
-		return NextResponse.json({ error: error.message }, { status: 500 });
+		return handleError(error);
 	}
 };
 
 export const DELETE = async (request) => {
-	const { id, public_id } = await request.json();
 	try {
+		const { id, public_id } = await request.json();
+		await connectToDb();
 		await Tools.findByIdAndDelete(id);
 		await deleteImage(public_id);
-		return NextResponse.json(
-			{ message: "tools deleted" },
-			{
-				status: 200,
-			},
-		);
+		return NextResponse.json({ message: "Tool deleted" }, { status: 200 });
 	} catch (error) {
-		return NextResponse.json({ error: error.message }, { status: 500 });
+		return handleError(error);
 	}
+};
+
+const handleError = (error) => {
+	return NextResponse.json({ error: error.message }, { status: 500 });
 };

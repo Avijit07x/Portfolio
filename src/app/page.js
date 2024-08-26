@@ -26,13 +26,11 @@ const Page = () => {
 						},
 					}),
 					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/projects", {
-						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},
 					}),
 					fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`, {
-						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},

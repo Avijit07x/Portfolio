@@ -11,15 +11,14 @@ const Page = () => {
 		const { tools_name, image_url } = Object.fromEntries(formData);
 
 		try {
-			const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
+			await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({ tools_name, image_url, public_id: publicId }),
 			});
-			const data = await res.json();
-			console.log(data);
+
 			e.target.reset();
 			setToolUrl("");
 			setPublicId("");
