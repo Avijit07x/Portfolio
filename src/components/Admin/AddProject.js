@@ -172,7 +172,7 @@ const AddProject = () => {
 					/>
 				</div>
 				<button
-					className="mt-2 rounded-lg bg-blue-500 p-2 text-white transition-colors hover:bg-blue-500/90"
+					className="mt-2 rounded-lg bg-blue-500 p-2 text-white transition-colors duration-300 hover:bg-blue-500/90"
 					type="submit"
 				>
 					Submit

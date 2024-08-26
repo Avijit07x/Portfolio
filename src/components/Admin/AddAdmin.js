@@ -41,7 +41,7 @@ const AddAdmin = () => {
 						required
 					/>
 					<button
-						className="w-full rounded-lg bg-blue-500 p-2 text-white transition-colors hover:bg-blue-500/90"
+						className="w-full rounded-lg bg-blue-500 p-2 text-white transition-colors duration-300 hover:bg-blue-500/90"
 						type="submit"
 					>
 						Create Admin
