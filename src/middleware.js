@@ -5,7 +5,6 @@ import NextAuth from "next-auth";
 const { auth } = NextAuth(authConfig);
 
 export async function middleware(request) {
-	
 	const session = await auth();
 	const isLoginPage = request.nextUrl.pathname.startsWith("/admin/login");
 	const isDashboardPage =
@@ -20,11 +19,7 @@ export async function middleware(request) {
 	if (session && isLoginPage) {
 		return NextResponse.redirect(new URL("/admin/dashboard", request.url));
 	}
-	if (session && request.nextUrl.pathname === "/admin/dashboard") {
-		return NextResponse.redirect(
-			new URL("/admin/dashboard/add-admin", request.url),
-		);
-	}
+
 	// Continue to the requested page
 	return NextResponse.next();
 }

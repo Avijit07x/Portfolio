@@ -1,6 +1,5 @@
 import { Admin } from "@/lib/actions";
-
-const Page = () => {
+const AddAdmin = () => {
 	return (
 		<div className="mx-auto mt-10 px-5 lg:w-3/4">
 			<div className="space-y-4 rounded-lg bg-white px-8 py-5 shadow-lg">
@@ -53,4 +52,4 @@ const Page = () => {
 	);
 };
 
-export default Page;
+export default AddAdmin;

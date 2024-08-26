@@ -20,7 +20,6 @@ const Page = () => {
 			try {
 				const [toolsRes, projectsRes, userDataRes] = await Promise.all([
 					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
-						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},
@@ -31,6 +30,7 @@ const Page = () => {
 						},
 					}),
 					fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`, {
+						cache: "force-cache",
 						headers: {
 							"Content-Type": "application/json",
 						},

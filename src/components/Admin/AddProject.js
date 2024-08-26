@@ -2,7 +2,7 @@
 import { CldUploadWidget } from "next-cloudinary";
 import { useState } from "react";
 
-const Page = () => {
+const AddProject = () => {
 	const [tags, setTags] = useState([]);
 	const [tagValue, setTagValue] = useState("");
 	const [imageUrl, setImageUrl] = useState("");
@@ -182,4 +182,4 @@ const Page = () => {
 	);
 };
 
-export default Page;
+export default AddProject;

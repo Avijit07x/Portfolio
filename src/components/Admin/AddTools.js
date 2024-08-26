@@ -2,7 +2,7 @@
 import { CldUploadWidget } from "next-cloudinary";
 import { useState } from "react";
 
-const Page = () => {
+const AddTools = () => {
 	const [toolUrl, setToolUrl] = useState("");
 	const [publicId, setPublicId] = useState("");
 	const handleFormSubmit = async (e) => {
@@ -87,4 +87,4 @@ const Page = () => {
 	);
 };
 
-export default Page;
+export default AddTools;

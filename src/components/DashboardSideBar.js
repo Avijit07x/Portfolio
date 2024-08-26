@@ -1,9 +1,4 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const DashboardSideBar = ({ session }) => {
-	const pathname = usePathname();
+const DashboardSideBar = ({ handleTabClick, selectedTab }) => {
 	return (
 		<>
 			<div className="space-y-3 overflow-y-hidden text-center font-medium text-white">
@@ -11,30 +6,36 @@ const DashboardSideBar = ({ session }) => {
 				<ul className="space-y-5">
 					<li
 						className={
-							pathname.includes("add-admin")
+							selectedTab === "addAdmin"
 								? "rounded-lg bg-white py-1 text-black"
 								: ""
 						}
 					>
-						<Link href="/admin/dashboard/add-admin">Add Admin</Link>
+						<button onClick={() => handleTabClick("addAdmin")}>
+							Add Admin
+						</button>
 					</li>
 					<li
 						className={
-							pathname.includes("add-project")
+							selectedTab === "addProject"
 								? "rounded-lg bg-white py-1 text-black"
 								: ""
 						}
 					>
-						<Link href="/admin/dashboard/add-project">Add Project</Link>
+						<button onClick={() => handleTabClick("addProject")}>
+							Add Project
+						</button>
 					</li>
 					<li
 						className={
-							pathname.includes("add-tools")
+							selectedTab === "addTools"
 								? "rounded-lg bg-white py-1 text-black"
 								: ""
 						}
 					>
-						<Link href="/admin/dashboard/add-tools">Add Tools</Link>
+						<button onClick={() => handleTabClick("addTools")}>
+							Add Tools
+						</button>
 					</li>
 				</ul>
 				<h1 className="rounded-lg bg-red-500 py-1 text-white">
@@ -43,12 +44,14 @@ const DashboardSideBar = ({ session }) => {
 				<ul className="space-y-5">
 					<li
 						className={
-							pathname.includes("delete-tools")
+							selectedTab === "deleteTools"
 								? "rounded-lg bg-white py-1 text-black"
 								: ""
 						}
 					>
-						<Link href="/admin/dashboard/delete-tools">Delete Tools</Link>
+						<button onClick={() => handleTabClick("deleteTools")}>
+							Delete Tools
+						</button>
 					</li>
 				</ul>
 			</div>
