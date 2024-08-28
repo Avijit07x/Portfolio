@@ -45,7 +45,7 @@ const ProjectCard = ({ project }) => {
 				</div>
 				<div className="relative h-48 w-72 shadow-md lg:order-2 lg:h-[15rem] lg:w-[28rem]">
 					<Image
-						className="object-cover object-top"
+						className="object-cover object-top w-72 h-48"
 						src={project.image_url}
 						alt={project.title}
 						fill

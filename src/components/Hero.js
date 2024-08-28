@@ -51,15 +51,15 @@ const Hero = () => {
 					Web Developer
 				</span>
 				<div className="relative top-10 h-[1.8rem] w-[1.8rem] animate-fadeInOut lg:left-20 lg:top-[6rem]">
-					<Image src="/js.png" alt="logo" fill sizes="(100vw, 100vh)" />
+					<Image src="/js.png" alt="logo" height={45} width={45} />
 				</div>
 				<div className="relative left-52 top-52 h-[1.8rem] w-[1.8rem] animate-spinSlow lg:-top-44 lg:left-[25rem]">
 					<Image
 						className="object-contain"
 						src="/react.png"
 						alt="react logo"
-						fill
-						sizes="(100vw, 100vh)"
+						height={40}
+						width={40}
 						quality={100}
 					/>
 				</div>
@@ -68,8 +68,8 @@ const Hero = () => {
 						className="object-contain"
 						src="/next-js.png"
 						alt="next-js logo"
-						fill
-						sizes="(100vw, 100vh)"
+						height={40}
+						width={40}
 					/>
 				</div>
 				<div className="relative h-60 w-60 animate-bounceSlow lg:h-[25rem] lg:w-[25rem]">
@@ -77,9 +77,9 @@ const Hero = () => {
 						className="object-contain"
 						src="/face.png"
 						alt="face logo"
-						fill
+						height={400}
+						width={400}
 						priority
-						sizes="(100vw, 100vh)"
 					/>
 				</div>
 			</div>

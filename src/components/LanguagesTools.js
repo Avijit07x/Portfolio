@@ -39,6 +39,7 @@ const LanguagesTools = ({ tools }) => {
 									alt={tool.tools_name}
 									width={40}
 									height={40}
+									loading="lazy"
 								/>
 							</div>
 						);
