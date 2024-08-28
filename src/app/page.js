@@ -12,13 +12,12 @@ import { useEffect, useState } from "react";
 const Page = () => {
 	const [tools, setTools] = useState([]);
 	const [projects, setProjects] = useState([]);
-	const [userData, setUserData] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const [toolsRes, projectsRes, userDataRes] = await Promise.all([
+				const [toolsRes, projectsRes] = await Promise.all([
 					fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools", {
 						headers: {
 							"Content-Type": "application/json",
@@ -29,21 +28,13 @@ const Page = () => {
 							"Content-Type": "application/json",
 						},
 					}),
-					fetch(`${process.env.NEXT_PUBLIC_BASE_URL}api/user-data`, {
-						cache: "force-cache",
-						headers: {
-							"Content-Type": "application/json",
-						},
-					}),
 				]);
 
 				const toolsData = await toolsRes.json();
 				const projectsData = await projectsRes.json();
-				const userDataData = await userDataRes.json();
 
 				setTools(toolsData);
 				setProjects(projectsData.reverse());
-				setUserData(userDataData[0]);
 			} catch (error) {
 				console.log({ error: error.message });
 			} finally {
@@ -64,7 +55,7 @@ const Page = () => {
 				<Navbar />
 			</header>
 			<main className="px-4 lg:px-24 xl:px-36">
-				<Hero userData={userData} />
+				<Hero />
 				<LanguagesTools tools={tools} />
 				<MyWork projects={projects} />
 				<ContactMe />

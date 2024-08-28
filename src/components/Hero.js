@@ -1,33 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Hero = ({ userData }) => {
+const Hero = () => {
 	return (
 		<div className="flex h-svh w-full animate-fadeInAndSlideUp flex-col-reverse items-center justify-center opacity-0 lg:h-screen lg:flex-row lg:justify-between">
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
-					Hello, <br /> I&#39;m{" "}
-					<span className="text-primary">{userData?.name}</span>
+					Hello, <br /> I&#39;m <span className="text-primary">Avijit Dey</span>
 				</h1>
 				<p className="font-semibold">
 					<span className="text-primary">{"{ "}</span>
-					{userData?.profession}
+					Front-End Web Developer
 					<span className="text-primary">{" }"}</span>
 				</p>
-				<p className="text-sm lg:text-base">{userData?.desc}</p>
+				<p className="text-sm lg:text-base">
+					I love turning complex problems into simple, beautiful, and intuitive
+					designs. My focus is on developing products that make life simpler and
+					more efficient.
+				</p>
 				<div className="space-x-4">
 					<Link href="#contact">
 						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
 							Contact Me
 						</button>
 					</Link>
-					{userData?.resume && (
-						<Link href={`${userData.resume}`}>
-							<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
-								My Resume
-							</button>
-						</Link>
-					)}
+
+					<Link
+						href={
+							"https://drive.google.com/file/d/173OocuWwADpgIVO6FM07Cyjl3xeALMup/view"
+						}
+					>
+						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
+							My Resume
+						</button>
+					</Link>
 				</div>
 				<div className="grid place-items-center lg:place-content-start">
 					<div className="animate-bounceSlowFade">
