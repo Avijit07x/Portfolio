@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 const Page = () => {
 	const [tools, setTools] = useState([]);
 	const [projects, setProjects] = useState([]);
-	const [loading, setLoading] = useState(true);
+	// const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -36,18 +36,18 @@ const Page = () => {
 				setTools(toolsData);
 				setProjects(projectsData.reverse());
 			} catch (error) {
-				console.log({ error: error.message });
-			} finally {
-				setLoading(false);
-			}
+				console.log({ error: error.message });}
+			// } finally {
+			// 	setLoading(false);
+			// }
 		};
 
 		fetchData();
 	}, []);
 
-	if (loading) {
-		return <LoadingScreen />;
-	}
+	// if (loading) {
+	// 	return <LoadingScreen />;
+	// }
 
 	return (
 		<>
