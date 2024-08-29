@@ -45,15 +45,24 @@ const LanguagesTools = ({ tools }) => {
 						);
 					})
 				) : (
-					<div className="mt-10 flex items-center justify-center gap-2">
-						<MoonLoader
-							color="#ef4e19"
-							loading
-							size={18}
-							aria-label="Loading Spinner"
-							data-testid="loader"
-						/>
-						<p className="text-center">Loading...</p>
+					<div className="flex items-center justify-center flex-wrap gap-4">
+						{Array(10)
+							.fill(0)
+							.map((_, index) => (
+								<div
+									key={index}
+									className="grid h-20 w-20 place-items-center rounded-md bg-white shadow-md"
+									title="Loading..."
+								>
+									<Image
+										className="h-7 w-7 animate-pulse object-contain"
+										src="/image.svg"
+										alt="dummy"
+										width={100}
+										height={100}
+									/>
+								</div>
+							))}
 					</div>
 				)}
 			</div>

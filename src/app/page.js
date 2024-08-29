@@ -4,7 +4,6 @@ import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
-import LoadingScreen from "@/components/LoadingScreen";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
@@ -12,7 +11,7 @@ import { useEffect, useState } from "react";
 const Page = () => {
 	const [tools, setTools] = useState([]);
 	const [projects, setProjects] = useState([]);
-	// const [loading, setLoading] = useState(true);
+
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -36,18 +35,12 @@ const Page = () => {
 				setTools(toolsData);
 				setProjects(projectsData.reverse());
 			} catch (error) {
-				console.log({ error: error.message });}
-			// } finally {
-			// 	setLoading(false);
-			// }
+				console.log({ error: error.message });
+			}
 		};
 
 		fetchData();
 	}, []);
-
-	// if (loading) {
-	// 	return <LoadingScreen />;
-	// }
 
 	return (
 		<>

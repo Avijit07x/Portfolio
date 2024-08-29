@@ -1,6 +1,5 @@
-
 import ProjectCard from "./ProjectCard";
-import { MoonLoader } from "react-spinners";
+import ProjectPlaceholder from "./ProjectCardPlaceholder";
 
 const MyWork = ({ projects }) => {
 	return (
@@ -22,16 +21,13 @@ const MyWork = ({ projects }) => {
 						<ProjectCard key={project._id} project={project} />
 					))
 				) : (
-					<div className="mt-10 flex items-center justify-center gap-2">
-						<MoonLoader
-							color="#ef4e19"
-							loading
-							size={18}
-							aria-label="Loading Spinner"
-							data-testid="loader"
-						/>
-						<p className="text-center">Loading...</p>
-					</div>
+					<>
+						{Array(3)
+							.fill(0)
+							.map((_, index) => (
+								<ProjectPlaceholder key={index} />
+							))}
+					</>
 				)}
 			</div>
 		</div>
