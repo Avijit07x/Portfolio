@@ -1,11 +1,9 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 
 const DeleteTools = ({ tools, setTools }) => {
 	const [text, setText] = useState("");
-
-	
 
 	const handleDelete = async (id, public_id) => {
 		try {

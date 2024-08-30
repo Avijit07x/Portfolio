@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { MoonLoader } from "react-spinners";
 
 const LanguagesTools = ({ tools }) => {
 	return (
