@@ -44,7 +44,7 @@ const ContactForm = () => {
 				Name:
 			</label>
 			<input
-				className="transition-color mb-2 h-8 rounded-md border border-primary px-2 text-sm outline-none placeholder:text-sm focus:border-2"
+				className="transition-color mb-2 h-10 rounded-xl border border-primary px-2 text-sm outline-none placeholder:text-sm focus:border-2"
 				type="text"
 				id="user_name"
 				name="user_name"
@@ -58,7 +58,7 @@ const ContactForm = () => {
 				Email:
 			</label>
 			<input
-				className="transition-color mb-2 h-8 rounded-md border border-primary px-2 text-sm outline-none placeholder:text-sm focus:border-2"
+				className="transition-color mb-2 h-10 rounded-xl border border-primary px-2 text-sm outline-none placeholder:text-sm focus:border-2"
 				type="email"
 				name="user_email"
 				id="user_email"
@@ -69,20 +69,20 @@ const ContactForm = () => {
 				Message:
 			</label>
 			<textarea
-				className="transition-color mb-2 h-32 resize-none rounded-md border border-primary px-2 py-2 text-sm outline-none placeholder:text-sm focus:border-2"
+				className="transition-color mb-2 h-40 resize-none rounded-xl border border-primary px-2 py-2 text-sm outline-none placeholder:text-sm focus:border-2"
 				placeholder="Message"
 				id="message"
 				name="message"
 				required
 			></textarea>
 			<button
-				className={` ${isSubmitting ? "bg-primary" : ""} mx-auto h-9 w-20 rounded-md border-[1.5px] border-primary font-semibold transition-colors hover:bg-primary/90 hover:text-white`}
+				className={` ${isSubmitting ? "bg-primary" : ""} mx-auto h-9 w-20 rounded-lg bg-white border-[1.5px] border-primary font-semibold transition-colors hover:bg-primary/90 hover:text-white`}
 				type="submit"
 				disabled={isSubmitting}
 			>
 				{isSubmitting ? (
 					<SyncLoader
-						size={8}
+						size={5}
 						color="#ffffff"
 						aria-label="Loading Spinner"
 						data-testid="loader"

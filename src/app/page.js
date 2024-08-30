@@ -12,7 +12,6 @@ const Page = () => {
 	const [tools, setTools] = useState([]);
 	const [projects, setProjects] = useState([]);
 
-
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -43,7 +42,7 @@ const Page = () => {
 	}, []);
 
 	return (
-		<>
+		<div className="antialiased">
 			<header>
 				<Navbar />
 			</header>
@@ -54,7 +53,7 @@ const Page = () => {
 				<ContactMe />
 			</main>
 			<Footer />
-		</>
+		</div>
 	);
 };
 
