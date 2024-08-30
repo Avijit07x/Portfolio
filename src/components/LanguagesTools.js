@@ -46,7 +46,7 @@ const LanguagesTools = ({ tools }) => {
 					})
 				) : (
 					<div className="flex items-center justify-center flex-wrap gap-4">
-						{Array(10)
+						{Array(27)
 							.fill(0)
 							.map((_, index) => (
 								<div
