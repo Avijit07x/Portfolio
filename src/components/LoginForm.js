@@ -13,6 +13,7 @@ const LoginForm = () => {
 	const [showPassword, setShowPassword] = useState(false);
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
+		setError("");
 		setIsLoading(true);
 		try {
 			const formData = new FormData(e.currentTarget);

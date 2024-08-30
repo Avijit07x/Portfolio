@@ -17,9 +17,9 @@ const Navbar = () => {
 						<Image
 							src="/logo.png"
 							alt="logo"
-							fill
+							width={100}
+							height={100}
 							priority
-							sizes="(100vw, 100vh)"
 						/>
 					</div>
 				</Link>

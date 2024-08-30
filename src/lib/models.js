@@ -1,9 +1,5 @@
 import mongoose from "mongoose";
 
-const userDataSchema = new mongoose.Schema({
-	name: String,
-});
-
 const adminDataSchema = new mongoose.Schema({
 	user_name: {
 		type: String,
@@ -34,9 +30,6 @@ const projectSchema = new mongoose.Schema({
 	live_url: { type: String, required: true },
 	tags: { type: [String], required: true },
 });
-
-export const UserData =
-	mongoose.models?.userData || mongoose.model("userData", userDataSchema);
 
 export const AdminData =
 	mongoose.models?.adminDetail ||
