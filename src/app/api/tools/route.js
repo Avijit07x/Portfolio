@@ -5,7 +5,7 @@ import { connectToDb } from "@/lib/utils";
 
 export const GET = async () => {
 	try {
-		connectToDb();
+		await connectToDb();
 		const tools = await Tools.find({});
 		return NextResponse.json(tools, { status: 200 });
 	} catch (error) {
