@@ -15,6 +15,7 @@ export const GET = async () => {
 
 export const POST = async (request) => {
 	try {
+		await connectToDb();
 		const data = await request.json();
 		const newTools = new Tools(data);
 		await newTools.save();
@@ -26,6 +27,7 @@ export const POST = async (request) => {
 
 export const DELETE = async (request) => {
 	try {
+		await connectToDb();
 		const { id, public_id } = await request.json();
 		await Tools.findByIdAndDelete(id);
 		await deleteImage(public_id);
