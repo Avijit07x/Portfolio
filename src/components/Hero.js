@@ -79,6 +79,8 @@ const Hero = () => {
 						alt="face logo"
 						height={400}
 						width={400}
+						quality={75}
+						sizes="(max-width: 1024px) 240px, 400px"
 						priority
 					/>
 				</div>
