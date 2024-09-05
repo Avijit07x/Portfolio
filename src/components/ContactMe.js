@@ -22,7 +22,7 @@ const ContactMe = () => {
 					<h1 className="text-center font-medium">Or contact me through:</h1>
 					<div className="mt-3 flex items-center justify-center gap-4 lg:mt-10 lg:gap-10">
 						<Link
-							className="rounded-md bg-white p-3 shadow-md"
+							className="group rounded-md bg-white p-3 shadow-md transition-colors duration-300 hover:bg-gray-100/80"
 							href="mailto:deyavijit134@gmail.com"
 							target="_blank"
 							aria-label="email me"
@@ -30,7 +30,7 @@ const ContactMe = () => {
 							<EmailIcon />
 						</Link>
 						<Link
-							className="rounded-md bg-white p-3 shadow-md"
+							className="rounded-md bg-white p-3 shadow-md transition-colors duration-300 hover:bg-gray-100/80"
 							href="https://twitter.com/Avijit07x"
 							target="_blank"
 							aria-label="follow me on twitter"
@@ -38,7 +38,7 @@ const ContactMe = () => {
 							<XIcon />
 						</Link>
 						<Link
-							className="rounded-md bg-white p-3 shadow-md"
+							className="rounded-md bg-white p-3 shadow-md transition-colors duration-300 hover:bg-gray-100/80"
 							href="https://github.com/Avijit07x"
 							target="_blank"
 							aria-label="follow me on github"
@@ -46,7 +46,7 @@ const ContactMe = () => {
 							<GithubIcon />
 						</Link>
 						<Link
-							className="rounded-md bg-white p-3 shadow-md"
+							className="rounded-md bg-white p-3 shadow-md transition-colors duration-300 hover:bg-gray-100/80"
 							href="https://www.linkedin.com/in/avijit07x/"
 							target="_blank"
 							aria-label="follow me on linkedin"
