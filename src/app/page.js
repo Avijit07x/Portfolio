@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 const Page = () => {
 	const [tools, setTools] = useState([]);
 	const [projects, setProjects] = useState([]);
+	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -44,15 +45,17 @@ const Page = () => {
 	return (
 		<div className="antialiased">
 			<header>
-				<Navbar />
+				<Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
 			</header>
-			<main className="px-4 lg:px-24 xl:px-36">
-				<Hero />
-				<LanguagesTools tools={tools} />
-				<MyWork projects={projects} />
-				<ContactMe />
-			</main>
-			<Footer />
+			<div onClick={() => setIsOpen(false)}>
+				<main className="px-4 lg:px-24 xl:px-36">
+					<Hero />
+					<LanguagesTools tools={tools} />
+					<MyWork projects={projects} />
+					<ContactMe />
+				</main>
+				<Footer />
+			</div>
 		</div>
 	);
 };

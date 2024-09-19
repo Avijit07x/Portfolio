@@ -1,14 +1,11 @@
 "use client";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import CancelIcon from "./icons/CancelIcon";
-import { useState } from "react";
 import MenuIcon from "./icons/Menu";
 
-const Navbar = () => {
-	const [isOpen, setIsOpen] = useState(false);
-
+const Navbar = ({ isOpen, setIsOpen }) => {
 	return (
 		<>
 			<nav className="fixed left-0 top-0 z-10 flex w-full items-center justify-between bg-white bg-opacity-20 backdrop-blur-sm backdrop-filter lg:px-10">
