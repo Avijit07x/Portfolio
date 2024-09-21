@@ -38,13 +38,12 @@ const LanguagesTools = ({ tools }) => {
 									alt={tool.tools_name}
 									width={40}
 									height={40}
-									loading="lazy"
 								/>
 							</div>
 						);
 					})
 				) : (
-					<div className="flex items-center justify-center flex-wrap gap-4">
+					<div className="flex flex-wrap items-center justify-center gap-4">
 						{Array(27)
 							.fill(0)
 							.map((_, index) => (

@@ -41,7 +41,7 @@ const Page = () => {
 
 		fetchData();
 	}, []);
-
+	
 	return (
 		<div className="antialiased">
 			<header>
