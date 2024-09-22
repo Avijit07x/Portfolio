@@ -38,6 +38,7 @@ const LanguagesTools = ({ tools }) => {
 									alt={tool.tools_name}
 									width={40}
 									height={40}
+									priority={true}
 								/>
 							</div>
 						);
