@@ -8,7 +8,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#ef4e19",
+				primary: "#ff3951",
 			},
 			keyframes: {
 				fadeInAndSlideUp: {

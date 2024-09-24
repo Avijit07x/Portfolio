@@ -1,9 +1,17 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
 	return (
-		<div className="flex h-svh w-full animate-fadeInAndSlideUp flex-col-reverse items-center justify-center opacity-0 lg:h-screen lg:flex-row lg:justify-between">
+		<motion.div
+			initial={{ opacity: 0, y: 60 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
+			viewport={{ once: true }}
+			className="mt-5 flex w-full flex-col-reverse items-center justify-center lg:h-screen lg:flex-row lg:justify-between"
+			style={{ willChange: "transform, opacity" }}
+		>
 			<div className="space-y-4 text-center lg:w-1/2 lg:text-left">
 				<h1 className="text-4xl font-medium lg:text-5xl lg:leading-[3.5rem]">
 					Hello, <br /> I&#39;m <span className="text-primary">Avijit Dey</span>
@@ -20,7 +28,7 @@ const Hero = () => {
 				</p>
 				<div className="space-x-4">
 					<Link href="#contact">
-						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
+						<button className="rounded-full border border-primary bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-primary">
 							Contact Me
 						</button>
 					</Link>
@@ -30,7 +38,7 @@ const Hero = () => {
 							"https://drive.google.com/file/d/173OocuWwADpgIVO6FM07Cyjl3xeALMup/view"
 						}
 					>
-						<button className="mt-4 rounded-lg border border-primary px-3 py-1 text-sm transition-colors hover:bg-primary hover:text-white lg:text-base lg:font-medium">
+						<button className="rounded-full border border-primary bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-primary">
 							My Resume
 						</button>
 					</Link>
@@ -85,7 +93,7 @@ const Hero = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

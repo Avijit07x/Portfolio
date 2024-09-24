@@ -3,8 +3,8 @@ import { HandleSingIn } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { PropagateLoader } from "react-spinners";
-import EyeOpen from "./icons/EyeOpen";
 import EyeClose from "./icons/EyeClose";
+import EyeOpen from "./icons/EyeOpen";
 
 const LoginForm = () => {
 	const router = useRouter();

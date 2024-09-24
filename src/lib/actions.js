@@ -1,9 +1,9 @@
 "use server";
 
+import bcrypt from "bcryptjs";
 import { signIn, signOut } from "./auth";
 import { AdminData } from "./models";
 import { connectToDb } from "./utils";
-import bcrypt from "bcryptjs";
 
 export const HandleSingIn = async (formData) => {
 	const { userID, password } = Object.fromEntries(formData);
@@ -30,8 +30,7 @@ export const Admin = async (formData) => {
 	const { username, userID, password } = Object.fromEntries(formData);
 	try {
 		await connectToDb();
-		const salt = await bcrypt.genSalt(15);
-		// const hashedUserId = await bcrypt.hash(userID, salt);
+		const salt = await bcrypt.genSalt(10);	
 		const hashedPassword = await bcrypt.hash(password, salt);
 		const newAdminData = await AdminData({
 			user_name: username,

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import XIcon from "./icons/XIcon";
+import ContactForm from "./ContactForm";
+import EmailIcon from "./icons/EmailIcon";
 import GithubIcon from "./icons/GithubIcon";
 import LinkedinIcon from "./icons/LinkedinIcon";
-import EmailIcon from "./icons/EmailIcon";
-import ContactForm from "./ContactForm";
+import XIcon from "./icons/XIcon";
 
 const ContactMe = () => {
 	return (

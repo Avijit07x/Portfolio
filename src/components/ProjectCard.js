@@ -30,14 +30,14 @@ const ProjectCard = ({ project }) => {
 						<Link
 							href={project.github_url}
 							target="_blank"
-							className="rounded-full bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-primary/90"
+							className="rounded-full border border-primary bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-primary"
 						>
 							Github
 						</Link>
 						<Link
 							href={project.live_url}
 							target="_blank"
-							className="rounded-full bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-primary/90"
+							className="rounded-full border border-primary bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-primary"
 						>
 							Demo
 						</Link>
@@ -45,7 +45,7 @@ const ProjectCard = ({ project }) => {
 				</div>
 				<div className="relative h-48 w-72 shadow-md lg:order-2 lg:h-[15rem] lg:w-[28rem]">
 					<Image
-						className="object-cover object-top w-72 h-48"
+						className="h-48 w-72 object-cover object-top"
 						src={project.image_url}
 						alt={project.title}
 						fill

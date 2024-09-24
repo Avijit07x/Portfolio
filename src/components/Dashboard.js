@@ -1,7 +1,7 @@
 import DashboardSideBar from "@/components/DashboardSideBar";
 import Link from "next/link";
-import MenuIcon from "./icons/Menu";
 import LoginBtn from "./Admin/LoginBtn";
+import MenuIcon from "./icons/Menu";
 const Dashboard = ({ handleTabClick, selectedTab, handleIsOpen, isOpen }) => {
 	return (
 		<>

@@ -1,6 +1,6 @@
 "use client";
-import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
 import { SyncLoader } from "react-spinners";
 
 const ContactForm = () => {
@@ -76,7 +76,7 @@ const ContactForm = () => {
 				required
 			></textarea>
 			<button
-				className={` ${isSubmitting ? "bg-primary" : ""} mx-auto h-9 w-20 rounded-lg border-[1.5px] border-primary bg-white font-semibold transition-colors hover:bg-primary/90 hover:text-white`}
+				className="mx-auto h-9 w-20 rounded-full border border-primary bg-primary px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-primary"
 				type="submit"
 				disabled={isSubmitting}
 			>

@@ -1,7 +1,31 @@
+import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectPlaceholder from "./ProjectCardPlaceholder";
 
-const MyWork = ({ projects }) => {
+const MyWork = () => {
+	const [projects, setProjects] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const res = await fetch(
+					process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
+					{
+						headers: {
+							"Content-Type": "application/json",
+						},
+					},
+				);
+
+				const data = await res.json();
+				setProjects(data.reverse());
+			} catch (error) {
+				console.log({ error: error.message });
+			}
+		};
+
+		fetchData();
+	}, []);
 	return (
 		<div className="w-full space-y-4 overflow-x-hidden py-20">
 			<h1 className="w-full text-center text-2xl font-semibold lg:text-3xl">

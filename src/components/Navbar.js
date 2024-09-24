@@ -24,6 +24,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 					<ul className="flex gap-8 text-base font-medium lg:font-semibold">
 						<li>
 							<Link
+								className="transition-colors duration-300 hover:text-primary"
 								href="https://www.linkedin.com/in/avijit07x/"
 								target="_blank"
 							>
@@ -31,12 +32,20 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 							</Link>
 						</li>
 						<li>
-							<Link href="https://github.com/Avijit07x" target="_blank">
+							<Link
+								className="transition-colors duration-300 hover:text-primary"
+								href="https://github.com/Avijit07x"
+								target="_blank"
+							>
 								Github
 							</Link>
 						</li>
 						<li>
-							<Link href="https://twitter.com/Avijit07x" target="_blank">
+							<Link
+								className="transition-colors duration-300 hover:text-primary"
+								href="https://twitter.com/Avijit07x"
+								target="_blank"
+							>
 								Twitter
 							</Link>
 						</li>
