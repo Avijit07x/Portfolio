@@ -11,13 +11,13 @@ const ProjectCard = ({ project }) => {
 				transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true }}
-				className="mx-auto mt-10 flex w-full flex-col items-center justify-between gap-3 rounded-lg bg-white p-5 shadow-lg lg:h-[350px] lg:w-4/5 lg:flex-row lg:p-14"
+				className="mx-auto mt-10 flex w-full flex-col items-center justify-between gap-3 rounded-lg bg-white p-5 shadow-lg lg:h-[350px] lg:flex-row lg:p-14 xl:w-4/5"
 			>
 				<div className="order-1 space-y-4 lg:w-2/3 lg:pr-10">
 					<h1 className="text-2xl font-semibold text-primary">
 						{project.title}
 					</h1>
-					<p className="">{project.description}</p>
+					<p className="line-clamp-4">{project.description} </p>
 					<div className="flex flex-wrap items-center gap-3 text-primary">
 						<h2 className="font-medium">Tools :</h2>
 						{project.tags.map((tag, index) => (
