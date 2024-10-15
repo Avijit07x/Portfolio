@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
 				initial={{ opacity: 0, x: 100 }}
 				transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
 				whileInView={{ opacity: 1, x: 0 }}
-				viewport={{ once: true }}
+				// viewport={{ once: true }}
 				className="mx-auto mt-10 flex w-full flex-col items-center justify-between gap-3 rounded-lg bg-white p-5 shadow-lg lg:h-[350px] lg:flex-row lg:p-14 xl:w-4/5"
 			>
 				<div className="order-1 space-y-4 lg:w-2/3 lg:pr-10">
