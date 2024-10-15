@@ -6,23 +6,11 @@ import Hero from "@/components/Hero";
 import LanguagesTools from "@/components/LanguagesTools";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
-import Lenis from "lenis";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 
 const Page = () => {
 	const [isOpen, setIsOpen] = useState(false);
-
-	useEffect(() => {
-		const lenis = new Lenis({
-			smoothWheel: true,
-			smoothTouch: true,
-		});
-		function raf(time) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-		requestAnimationFrame(raf);
-	});
 
 	return (
 		<div className="antialiased">
