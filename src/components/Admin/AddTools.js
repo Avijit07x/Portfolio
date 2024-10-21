@@ -77,7 +77,7 @@ const AddTools = () => {
 					/>
 				</div>
 				<button
-					className="rounded-lg bg-blue-500 px-3 py-2 hover:bg-blue-500/90 transition-colors duration-300 text-white"
+					className="rounded-lg bg-blue-500 px-3 py-2 text-white transition-colors duration-300 hover:bg-blue-500/90"
 					type="submit"
 				>
 					Submit
