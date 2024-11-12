@@ -1,7 +1,8 @@
+import { auth } from "@/lib/auth";
 import { Project } from "@/lib/models";
+import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
 import { handleError } from "../tools/route";
-import { connectToDb } from "@/lib/utils";
 
 export const GET = async () => {
 	try {
@@ -18,6 +19,10 @@ export const GET = async () => {
 export const POST = async (request) => {
 	const data = await request.json();
 	try {
+		const session = await auth();
+		if (!session) {
+			return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+		}
 		await connectToDb();
 		const newProject = await Project(data);
 		await newProject.save();

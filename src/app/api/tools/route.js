@@ -1,7 +1,8 @@
+import { auth } from "@/lib/auth";
 import { Tools } from "@/lib/models";
+import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
 import { deleteImage } from "../sign-cloudinary-params/route";
-import { connectToDb } from "@/lib/utils";
 
 export const GET = async () => {
 	try {
@@ -15,6 +16,10 @@ export const GET = async () => {
 
 export const POST = async (request) => {
 	try {
+		const session = await auth();
+		if (!session) {
+			return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+		}
 		await connectToDb();
 		const data = await request.json();
 		const newTools = new Tools(data);
@@ -27,6 +32,10 @@ export const POST = async (request) => {
 
 export const DELETE = async (request) => {
 	try {
+		const session = await auth();
+		if (!session) {
+			return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+		}
 		await connectToDb();
 		const { id, public_id } = await request.json();
 		await Tools.findByIdAndDelete(id);

@@ -1,3 +1,4 @@
+import { auth } from "@/lib/auth";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -7,6 +8,10 @@ cloudinary.config({
 });
 
 export async function POST(request) {
+	const session = await auth();
+	if (!session) {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+	}
 	const body = await request.json();
 	const { paramsToSign } = body;
 
