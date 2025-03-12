@@ -1,25 +1,16 @@
 import { auth } from "@/lib/auth";
 import { Project } from "@/lib/models";
 import { connectToDb } from "@/lib/utils";
-import redis from "@/utils/redis";
 import { NextResponse } from "next/server";
 import { handleError } from "../tools/route";
 
 export const GET = async () => {
 	try {
-		const cachedProjects = await redis.get("projects");
-		if (cachedProjects) {
-			return NextResponse.json(JSON.parse(cachedProjects), {
-				status: 200,
-			});
-		} else {
-			await connectToDb();
-			const projects = await Project.find({});
-			await redis.set("projects", JSON.stringify(projects));
-			return NextResponse.json(projects, {
-				status: 200,
-			});
-		}
+		await connectToDb();
+		const projects = await Project.find({});
+		return NextResponse.json(projects.reverse(), {
+			status: 200,
+		});
 	} catch (error) {
 		return handleError(error);
 	}
@@ -35,8 +26,6 @@ export const POST = async (request) => {
 		await connectToDb();
 		const newProject = await Project(data);
 		await newProject.save();
-		await redis.del("projects");
-		console.log("project created");
 		return NextResponse.json({ message: "Project created" });
 	} catch (error) {
 		return handleError(error);

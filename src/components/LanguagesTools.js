@@ -1,19 +1,14 @@
+"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const LanguagesTools = () => {
 	const [tools, setTools] = useState([]);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await fetch(
-					process.env.NEXT_PUBLIC_BASE_URL + "api/tools",
-					{
-						headers: {
-							"Content-Type": "application/json",
-						},
-					},
-				);
+				const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "api/tools");
 				const toolsData = await res.json();
 				setTools(toolsData);
 			} catch (error) {
@@ -92,4 +87,4 @@ const LanguagesTools = () => {
 	);
 };
 
-export default LanguagesTools;
+export default memo(LanguagesTools);

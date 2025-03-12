@@ -2,10 +2,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import CancelIcon from "./icons/CancelIcon";
 import MenuIcon from "./icons/Menu";
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const Navbar = () => {
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<>
 			<nav className="fixed left-0 top-0 z-10 flex w-full items-center justify-between bg-white bg-opacity-20 backdrop-blur-sm backdrop-filter lg:px-10">
@@ -65,7 +67,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 						exit={{ opacity: 0, x: 100 }}
 						className="fixed right-0 top-0 z-20 h-screen w-3/5 bg-white/50 p-5 backdrop-blur-md backdrop-filter lg:hidden"
 					>
-						<CancelIcon onClick={() => setIsOpen(!isOpen)} />
+						<div className="flex items-center justify-end">
+							<CancelIcon onClick={() => setIsOpen(!isOpen)} />
+						</div>
 						<ul className="mt-10 flex flex-col items-center justify-center gap-4 space-y-1 px-2 text-base font-medium text-primary lg:font-semibold">
 							<li className="w-full">
 								<Link

@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+"use client";
+import { memo, useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectPlaceholder from "./ProjectCardPlaceholder";
 
@@ -10,15 +11,9 @@ const MyWork = () => {
 			try {
 				const res = await fetch(
 					process.env.NEXT_PUBLIC_BASE_URL + "api/projects",
-					{
-						headers: {
-							"Content-Type": "application/json",
-						},
-					},
 				);
-
 				const data = await res.json();
-				setProjects(data.reverse());
+				setProjects(data);
 			} catch (error) {
 				console.log({ error: error.message });
 			}
@@ -58,4 +53,4 @@ const MyWork = () => {
 	);
 };
 
-export default MyWork;
+export default memo(MyWork);
